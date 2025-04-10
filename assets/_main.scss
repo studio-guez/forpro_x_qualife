@@ -1,0 +1,35 @@
+@import '_jungka-import.css';
+
+:root {
+  --app-gutter: 1rem;
+  --app-gutter-half: .5rem;
+
+  --app-color--blue: #1754ff;
+  --app-color--green: #3df069;
+}
+
+
+html {
+  font-size: 20px;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Jungka-ForPro', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.1em;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.1em;
+}
+
+h2 {
+  font-size: 3rem;
+  line-height: 1em;
+  font-weight: 700;
+}
