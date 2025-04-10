@@ -46,6 +46,12 @@
         </div>
       </div>
 
+      <div class="v-index__download">
+        <a class="v-index__download__button app-button app-button--xl">
+          Ressources Kick-off
+        </a>
+      </div>
+
 
       <div class="v-index__prog">
         <div class="v-index__prog__header">
@@ -104,14 +110,6 @@
           </div>
         </div>
       </div>
-
-
-      <div class="v-index__download">
-        <a class="v-index__download__button">
-          Press Kit
-        </a>
-      </div>
-
     </main>
 </template>
 
@@ -315,13 +313,6 @@ const props = defineProps<{
 }
 
 .v-index__download__button {
-  color: var(--app-color--blue);
-  font-size: 2rem;
-  font-weight: 600;
-  padding: 1.8rem 2rem 2.2rem;
-  line-height: 1ex;
-  border-radius: 4rem;
-  background: var(--app-color--green);
   margin: auto;
   margin-bottom: 5rem;
 }

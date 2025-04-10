@@ -6,6 +6,7 @@
 
   --app-color--blue: #1754ff;
   --app-color--green: #3df069;
+  --app-color--orange: #ea5b0c;
 }
 
 
@@ -32,4 +33,48 @@ h2 {
   font-size: 3rem;
   line-height: 1em;
   font-weight: 700;
+}
+
+
+
+.app-button {
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: .65rem 1rem .85rem;
+  line-height: 1ex;
+  border-radius: 4rem;
+  color: hsl(0, 0%, 15%);
+  background: hsl(0, 0%, 95%);
+  user-select: none;
+  cursor: pointer;
+
+  &:hover {
+    color: hsl(0, 0%, 95%);
+    background: hsl(0, 0%, 15%);
+  }
+
+  &.app-button--xl {
+    font-size: 1.5rem;
+    padding: 1.3rem 1.5rem 1.7rem;
+  }
+
+  &.app-button--blue {
+    color: var(--app-color--blue);
+    background: var(--app-color--green);
+
+    &:hover {
+      color: var(--app-color--green);
+      background: var(--app-color--blue);
+    }
+  }
+  &.app-button--green {
+    color: var(--app-color--green);
+    background: var(--app-color--blue);
+
+    &:hover {
+      color: var(--app-color--blue);
+      background: var(--app-color--green);
+    }
+  }
 }

@@ -17,6 +17,11 @@
       <div class="v-app-date__content">
         <slot/>
       </div>
+
+      <div class="v-app-date__links">
+        <a class="app-button app-button--blue" :href="link_inscription" >Inscription</a>
+        <a class="app-button app-button--green" :href="link_resources"   >Ressources</a>
+      </div>
     </section>
 </template>
 
@@ -31,7 +36,10 @@ defineProps<{
     date: string
     hour: string
     location: string
+
     subtitle?: string
+    link_inscription?: string
+    link_resources?: string
 }>()
 </script>
 
@@ -74,6 +82,11 @@ defineProps<{
 }
 
 .v-app-date__header__text__subtitle {
-  color: var(--app-color--blue);
+  color: var(--app-color--orange);
  }
+
+.v-app-date__links {
+  display: flex;
+  gap: 1rem;
+}
 </style>
