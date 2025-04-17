@@ -7,7 +7,7 @@
           <div>{{hour}}</div>
         </div>
         <div class="v-app-date__header__text">
-          <div class="v-app-date__header__text__title">{{ location }}</div>
+          <h3 class="v-app-date__header__text__title">{{ location }}</h3>
           <div v-if="subtitle"
                class="v-app-date__header__text__subtitle"
           >{{subtitle}}</div>
@@ -75,10 +75,10 @@ defineProps<{
 
 .v-app-date__header__text {
   padding-top: 1em;
-}
 
-.v-app-date__header__text__title {
-  font-weight: 700;
+  > *:first-child {
+    margin-top: 0;
+  }
 }
 
 .v-app-date__header__text__subtitle {
@@ -88,5 +88,6 @@ defineProps<{
 .v-app-date__links {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 </style>
