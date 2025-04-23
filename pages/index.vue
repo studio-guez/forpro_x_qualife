@@ -50,13 +50,14 @@
 
       <div class="v-index__intro">
         <div class="v-index__intro__content">
-          <p>Initiation sur le thème «gestion des conflits avec les adolescents» Claudine Gachet, directrice et fondatrice de l’Association Face à Face.</p>
+          <p>Les rendez-vous des formateurs et formatrices d’apprenti·es sont des espaces collaboratifs pensés pour créer une communauté active de professionnel·les en charge des apprenti·es. L’objectif est de valoriser le rôle des formateur·rices, d’offrir un lieu d’échange et de développer des ressources concrètes pour soutenir leur quotidien.</p>
+          <p>En décembre 2024, le kick-off des rendez-vous des formateur et formatrices d’apprenti∙es a réuni 35 acteurs et actrices de la formation d’apprenti∙es issu∙es de secteurs d’activité et tailles d’entreprises variées. Il a permis de travailler à l’identification des sujets et des formats prioritaires pour les formateurs et formatrices.</p>
         </div>
       </div>
 
       <div class="v-index__download">
         <a class="v-index__download__button app-button app-button--xl">
-          Ressources Kick-off
+          ressources atelier kick-off
         </a>
       </div>
 
@@ -72,7 +73,7 @@
                     date="Lundi 14 avril 2025"
                     hour="08h00 10h00 – 10h00 12h00"
                     location="Fondation ForPro - Route de la Galaise 23A, 1228 Plan-les-Ouates"
-                    subtitle='Thème : «Connaissance du public adolescent»'
+                    subtitle='Thème&nbsp;: Connaissance du public adolescent'
             >
               <p>Animé par Soizic de Montalier, psychologue clinicienne et du travail, spécialisée dans l’accompagnement des adolescents et l’analyse des pratiques professionnelles.</p>
             </AppDate>
@@ -82,7 +83,7 @@
                     date="Mardi 3 juin 2025"
                     hour="16h30 - 18h30"
                     location="Fondation Qualife - Rue Adrien-Lachenal 18 1207 Genève"
-                    subtitle="Thème : «Le rôle des formateur.rices d'apprenti.es - Partage d'expériences & Apports théoriques»"
+                    subtitle="Thème&nbsp;: Le rôle des formateur.rices d'apprenti.es - Partage d'expériences & Apports théoriques"
             >
               <p>Former un.e apprenti.e, transmettre et évaluer, comment et avec quels outils ?"</p>
             </AppDate>
@@ -92,7 +93,7 @@
                     date="Mercredi 28 août"
                     hour="17h00 – 19h00 – date et horaire à confirmer"
                     location="Fondation ForPro – Chemin de la Galaise 23A 1228 Plan-les-Ouates"
-                    subtitle="Thème : «Réseaux et partenaires soutien pour les formateur.rices d’apprenties»"
+                    subtitle="Thème&nbsp;: Réseaux et partenaires soutien pour les formateur.rices d’apprenties"
             >
               <p>Kiosques et temps d’échanges autour de l’offre de soutien pour les formateurs et apprenti.es dual»</p>
             </AppDate>
@@ -102,9 +103,9 @@
                     date="3ème semaine d’octobre 2025"
                     hour="date et horaire à venir"
                     location="Fondation Qualife - Rue Adrien-Lachenal 18 1207 Genève"
-                    subtitle="Thème : «Gestion du temps»"
+                    subtitle="Thème&nbsp;: Produire et former"
             >
-              <p>«Gérer son temps et l’optimiser,  entre transmission et tâches inhérentes à la profession»</p>
+              <p>Gérer son temps et l’optimiser,  entre transmission et tâches inhérentes à la profession</p>
             </AppDate>
           </div>
           <div class="v-index__prog__content__item">
@@ -116,13 +117,32 @@
               <p>Evénement festif pour réunir la communauté, conférence, réseautage et apéritif dinatoire</p>
             </AppDate>
           </div>
+
+          <div class="v-index__prog__content__item">
+            <div class="v-index__prog__content__item__text">
+              <h3>contactez-nous&nbsp;:</h3>
+
+              <p>
+                Fondation Qualife :
+                <br><a target="_blank" href="tel:+41227008461">022 700 84 61</a>
+                <br>ou via <a target="_blank" href="mailto:info@qualife.ch">info@qualife.ch</a>
+              </p>
+              <p>
+                Fondation ForPro :
+                <br><a target="_blank" href="tel:+410763761061">076 376 10 61</a>
+                <br>ou <a target="_blank" href="mailto:desk@for-pro.ch">desk@for-pro.ch</a>
+              </p>
+            </div>
+
+
+          </div>
         </div>
       </div>
 
       <footer class="v-index__footer">
         <div class="v-index__footer__content">
-          <a href="https://for-pro.ch">for-pro.ch</a> |
-          <a href="https://qualife.ch">qualife.ch</a>
+          <a target="_blank" href="https://www.for-pro.ch/entreprises">for-pro.ch</a> |
+          <a target="_blank" href="https://www.qualife.ch/actualites/">qualife.ch</a>
 
         </div>
 
@@ -373,6 +393,16 @@ const props = defineProps<{
 
   @media (max-width: 1150px) {
     width: 100%;
+  }
+}
+
+.v-index__prog__content__item__text {
+  h3 {
+    font-size: 1.5rem;
+    line-height: 1.1em;
+    margin-top: 0;
+    margin-bottom: 1.1em;
+    color: var(--app-color--blue);
   }
 }
 
