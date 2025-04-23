@@ -1,9 +1,17 @@
 <template>
     <main class="v-index"
     >
+      <div class="v-index__top-bar">
+        <div class="v-index__top-bar__wrap">
+          <img class="v-index__top-bar__wrap__img"
+               src="/images/header.svg" alt="logo">
+        </div>
+      </div>
+
       <div class="v-index__header">
-        <img class="v-index__header__logo"
-             src="/images/logo.svg" alt="logo">
+        <div class="v-index__header__padding-top"/>
+        <img class="v-index__header__logo-text"
+             src="/images/logo-text.svg" alt="logo">
       </div>
 
 
@@ -110,6 +118,19 @@
           </div>
         </div>
       </div>
+
+      <footer class="v-index__footer">
+        <div class="v-index__footer__content">
+          <a href="https://for-pro.ch">for-pro.ch</a> |
+          <a href="https://qualife.ch">qualife.ch</a>
+
+        </div>
+
+        <div class="v-index__footer__content">
+          <img src="/images/logo_forpro.svg" alt="logo forpro">
+          <img src="/images/logo_qualife.svg" alt="logo qualife">
+        </div>
+      </footer>
     </main>
 </template>
 
@@ -134,10 +155,42 @@ const props = defineProps<{
   box-sizing: border-box;
   max-width: 65rem;
   margin: auto;
-  padding: 1rem;
+  padding: 0 1rem;
 
   @media (max-width: 650px) {
-    padding: .5rem;
+    padding: 0 .5rem;
+  }
+}
+
+.v-index__top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  z-index: 1000;
+}
+
+.v-index__top-bar__wrap {
+  width: 100%;
+  max-width: 65rem;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 0 1rem;
+
+  @media (max-width: 650px) {
+    padding: 0 .5rem;
+  }
+}
+
+.v-index__top-bar__wrap__img {
+  width: calc(100% / 14 * 12);
+  display: block;
+
+  @media (max-width: 650px) {
+    width: calc( 100% / 14 * 14 );
   }
 }
 
@@ -145,10 +198,21 @@ const props = defineProps<{
   display: flex;
   width: 100%;
   box-sizing: border-box;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.v-index__header__logo {
+.v-index__header__padding-top {
+  height: auto;
+  aspect-ratio: 1080/89;
+  width: calc(100% / 14 * 12);
+
+  @media (max-width: 650px) {
+    width: calc( 100% / 14 * 14 );
+  }
+}
+
+.v-index__header__logo-text {
   display: block;
   width: calc( 100% / 14 * 12 );
   box-sizing: border-box;
@@ -209,9 +273,13 @@ const props = defineProps<{
 }
 
 .v-index__dates-2 {
-  margin-top: 25vw;
+  margin-top: 20rem;
   width: 50%;
   display: flex;
+
+  @media (max-width: 1300px) {
+    margin-top: 25vw;
+  }
 
   @media (max-width: 880px) {
     margin-top: 5vw;
@@ -316,5 +384,54 @@ const props = defineProps<{
   margin: auto;
   margin-bottom: 5rem;
 }
+
+.v-index__footer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+
+  a {
+    color: black;
+  }
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.v-index__footer__content {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+
+  &:nth-child(1) {
+    justify-content: flex-start;
+    padding-left: calc(100% / 14 * 1);
+
+    @media (max-width: 800px) {
+      padding: 0 ;
+      justify-content: center;
+    }
+  }
+
+  &:nth-child(2) {
+    justify-content: flex-end;
+    padding-right: calc(100% / 14 * 1);
+
+    @media (max-width: 800px) {
+      padding: 0 ;
+      justify-content: center;
+    }
+  }
+
+
+  img {
+    display: block;
+    height: 2rem;
+  }
+}
+
 
 </style>
