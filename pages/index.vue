@@ -56,7 +56,9 @@
       </div>
 
       <div class="v-index__download">
-        <a class="v-index__download__button app-button app-button--xl">
+        <a href="/Ressources_RDV_Formateurs_kickoff.pdf"
+           target="_blank"
+           class="v-index__download__button app-button app-button--xl">
           ressources atelier kick-off
         </a>
       </div>
