@@ -2,10 +2,13 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: false },
+
   css: [
     '~/assets/_main.scss',
   ],
+
   ssr: false,
+
   app:{
     baseURL: '/',
     head: {
@@ -20,5 +23,11 @@ export default defineNuxtConfig({
         { rel: 'manifest', href: '/site.webmanifest' },
       ]
     }
-  }
+  },
+
+  site: {
+    url: 'rendezvousdesformateurs.ch',
+  },
+
+  modules: ['@nuxtjs/sitemap'],
 })
