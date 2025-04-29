@@ -86,6 +86,7 @@
                     hour="16h30 - 18h30"
                     location="Fondation Qualife - Rue Adrien-Lachenal 18 1207 Genève"
                     subtitle="Thème&nbsp;: Le rôle des formateur.rices d'apprenti.es - Partage d'expériences & Apports théoriques"
+                    link_inscription="https://framaforms.org/rendez-vous-des-formateurrices-mardi-3-juin-2025-1745312862"
             >
               <p>Former un.e apprenti.e, transmettre et évaluer, comment et avec quels outils ?"</p>
             </AppDate>
@@ -96,6 +97,7 @@
                     hour="17h00 – 19h00 – date et horaire à confirmer"
                     location="Fondation ForPro – Chemin de la Galaise 23A 1228 Plan-les-Ouates"
                     subtitle="Thème&nbsp;: Réseaux et partenaires soutien pour les formateur.rices d’apprenties"
+                    link_inscription="https://framaforms.org/rendez-vous-des-formateurrices-mercredi-28-aout-2025-1745313882"
             >
               <p>Kiosques et temps d’échanges autour de l’offre de soutien pour les formateurs et apprenti.es dual»</p>
             </AppDate>
@@ -106,6 +108,7 @@
                     hour="date et horaire à venir"
                     location="Fondation Qualife - Rue Adrien-Lachenal 18 1207 Genève"
                     subtitle="Thème&nbsp;: Produire et former"
+                    link_inscription="https://framaforms.org/rendez-vous-des-formateurrices-octobre-2025-1745314190"
             >
               <p>Gérer son temps et l’optimiser,  entre transmission et tâches inhérentes à la profession</p>
             </AppDate>
@@ -115,6 +118,7 @@
                     date="Clôture de la programmation en décembre 2025"
                     hour="date et horaire à venir"
                     location="Fondation ForPro – Chemin de la Galaise 23A 1228 Plan-les-Ouates"
+                    link_inscription="https://framaforms.org/rendez-vous-des-formateurrices-decembre-2025-1745314433"
             >
               <p>Evénement festif pour réunir la communauté, conférence, réseautage et apéritif dinatoire</p>
             </AppDate>
