@@ -51,7 +51,7 @@
       <div class="v-index__intro">
         <div class="v-index__intro__content">
           <p>Les rendez-vous des formateurs et formatrices d’apprenti·es sont des espaces collaboratifs pensés pour créer une communauté active de professionnel·les en charge des apprenti·es. L’objectif est de valoriser le rôle des formateur·rices, d’offrir un lieu d’échange et de développer des ressources concrètes pour soutenir leur quotidien.</p>
-          <p>En décembre 2024, le kick-off des rendez-vous des formateur et formatrices d’apprenti∙es a réuni 35 acteurs et actrices de la formation d’apprenti∙es issu∙es de secteurs d’activité et tailles d’entreprises variées. Il a permis de travailler à l’identification des sujets et des formats prioritaires pour les formateurs et formatrices.</p>
+          <p>En décembre 2024, le&nbsp;kick-off des rendez-vous des formateur et formatrices d’apprenti∙es a réuni 35 acteurs et actrices de la formation d’apprenti∙es issu∙es de secteurs d’activité et tailles d’entreprises variées. Il a permis de travailler à l’identification des sujets et des formats prioritaires pour les formateurs et&nbsp;formatrices.</p>
         </div>
       </div>
 
@@ -88,7 +88,7 @@
                     subtitle="Thème&nbsp;: Le rôle des formateur.rices d'apprenti.es - Partage d'expériences & Apports théoriques"
                     link_inscription="https://framaforms.org/rendez-vous-des-formateurrices-mardi-3-juin-2025-1745312862"
             >
-              <p>Former un.e apprenti.e, transmettre et évaluer, comment et avec quels outils ?"</p>
+              <p>Former un.e apprenti.e, transmettre et évaluer, comment et avec quels outils&nbsp;?</p>
             </AppDate>
           </div>
           <div class="v-index__prog__content__item">
@@ -99,7 +99,7 @@
                     subtitle="Thème&nbsp;: Réseaux et partenaires soutien pour les formateur.rices d’apprenties"
                     link_inscription="https://framaforms.org/rendez-vous-des-formateurrices-mercredi-28-aout-2025-1745313882"
             >
-              <p>Kiosques et temps d’échanges autour de l’offre de soutien pour les formateurs et apprenti.es dual»</p>
+              <p>Kiosques et temps d’échanges autour de l’offre de soutien pour les formateurs et apprenti.es dual</p>
             </AppDate>
           </div>
           <div class="v-index__prog__content__item">
@@ -110,7 +110,7 @@
                     subtitle="Thème&nbsp;: Produire et former"
                     link_inscription="https://framaforms.org/rendez-vous-des-formateurrices-octobre-2025-1745314190"
             >
-              <p>Gérer son temps et l’optimiser,  entre transmission et tâches inhérentes à la profession</p>
+              <p>Gérer son temps et l’optimiser,  entre transmission et tâches inhérentes à la&nbsp;profession</p>
             </AppDate>
           </div>
           <div class="v-index__prog__content__item">
