@@ -441,6 +441,7 @@ const props = defineProps<{
   display: flex;
   gap: 1rem;
   align-items: flex-start;
+  padding-bottom: 1rem;
 
   &:nth-child(1) {
     justify-content: flex-start;
