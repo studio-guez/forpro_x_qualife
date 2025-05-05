@@ -20,7 +20,7 @@
 
       <div class="v-app-date__links">
         <a v-if="link_inscription"  target="_blank" class="app-button app-button--blue" :href="link_inscription" >Inscription</a>
-        <a                          target="_blank" class="app-button app-button--green" :href="link_resources"   >Ressources</a>
+        <a v-if="link_resources"    target="_blank" class="app-button app-button--green" :href="link_resources"   >Ressources</a>
       </div>
     </section>
 </template>
