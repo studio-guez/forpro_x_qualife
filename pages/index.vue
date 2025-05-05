@@ -53,15 +53,15 @@
           <p>Les rendez-vous des formateurs et formatrices d’apprenti·es sont des espaces collaboratifs pensés pour créer une communauté active de professionnel·les en charge des apprenti·es. L’objectif est de valoriser le rôle des formateur·rices, d’offrir un lieu d’échange et de développer des ressources concrètes pour soutenir leur quotidien.</p>
           <p>En décembre 2024, le&nbsp;kick-off des rendez-vous des formateur et formatrices d’apprenti∙es a réuni 35 acteurs et actrices de la formation d’apprenti∙es issu∙es de secteurs d’activité et tailles d’entreprises variées. Il a permis de travailler à l’identification des sujets et des formats prioritaires pour les formateurs et&nbsp;formatrices.</p>
         </div>
+
+        <div class="v-index__intro__content__download">
+          <a href="/Ressources_RDV_Formateurs_kickoff.pdf"
+             target="_blank"
+             class="v-index__download__button app-button app-button--xl"
+          >Ressources atelier kick-off</a>
+        </div>
       </div>
 
-      <div class="v-index__download">
-        <a href="/Ressources_RDV_Formateurs_kickoff.pdf"
-           target="_blank"
-           class="v-index__download__button app-button app-button--xl">
-          ressources atelier kick-off
-        </a>
-      </div>
 
 
       <div class="v-index__prog">
@@ -76,6 +76,7 @@
                     hour="08h00 10h00 – 10h00 12h00"
                     location="Fondation ForPro - Route de la Galaise 23A, 1228 Plan-les-Ouates"
                     subtitle='Thème&nbsp;: Connaissance du public adolescent'
+                    link_resources="L_adolescence_Soizic_de_Montalier.pdf"
             >
               <p>Animé par Soizic de Montalier, psychologue clinicienne et du travail, spécialisée dans l’accompagnement des adolescents et l’analyse des pratiques professionnelles.</p>
             </AppDate>
@@ -337,9 +338,10 @@ const props = defineProps<{
   display: flex;
   width: 100%;
   box-sizing: border-box;
-  justify-content: center;
+  align-items: center;
   margin-top: 7rem;
   margin-bottom: 5rem;
+  flex-direction: column;
 }
 
 .v-index__intro__content {
@@ -412,13 +414,25 @@ const props = defineProps<{
   }
 }
 
-.v-index__download {
+.v-index__intro__content__download {
   display: flex;
+  justify-content: flex-start;
+  width: calc(100% / 14 * 12);
+
+  @media (max-width: 650px) {
+    width: calc(100% / 14 * 14);
+  }
 }
 
 .v-index__download__button {
-  margin: auto;
   margin-bottom: 5rem;
+  background: var(--app-color--blue);
+  color: var(--app-color--green);
+
+  &:hover {
+    background: var(--app-color--green);
+    color: var(--app-color--blue);
+  }
 }
 
 .v-index__footer {
