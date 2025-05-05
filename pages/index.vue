@@ -131,7 +131,7 @@
               <p>
                 Fondation Qualife :
                 <br><a target="_blank" href="tel:+41227008461">022 700 84 61</a>
-                <br>ou via <a target="_blank" href="mailto:info@qualife.ch">info@qualife.ch</a>
+                <br>ou via <a target="_blank" href="mailto:event@qualife.ch">event@qualife.ch</a>
               </p>
               <p>
                 Fondation ForPro :
