@@ -55,7 +55,7 @@
         </div>
 
         <div class="v-index__intro__content__download">
-          <a href="/ressources_kickoff.zip"
+          <a href="https://nextcloud.for-pro.ch/s/sgJGmnJGMLSkf33"
              target="_blank"
              class="v-index__download__button app-button app-button--xl"
           >Ressources atelier kick-off</a>
@@ -76,7 +76,7 @@
                     hour="08h00 10h00 – 10h00 12h00"
                     location="Fondation ForPro - Route de la Galaise 23A, 1228 Plan-les-Ouates"
                     subtitle='Thème&nbsp;: Connaissance du public adolescent'
-                    link_resources="ressources_atelier_14_avril_2025.zip"
+                    link_resources="https://nextcloud.for-pro.ch/s/WDpy9QD7tFneerB"
             >
               <p>Animé par Soizic de Montalier, psychologue clinicienne et du travail, spécialisée dans l’accompagnement des adolescents et l’analyse des pratiques professionnelles.</p>
             </AppDate>
