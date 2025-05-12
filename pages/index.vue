@@ -83,7 +83,7 @@
           </div>
           <div class="v-index__prog__content__item">
             <AppDate
-                    date="Mardi 3 juin 2025"
+                    date="Mardi 10 juin 2025"
                     hour="16h30 - 18h30"
                     location="Fondation Qualife - Rue Adrien-Lachenal 18 1207 Genève"
                     subtitle="Thème&nbsp;: Le rôle des formateur.rices d'apprenti.es - Partage d'expériences & Apports théoriques"
@@ -94,8 +94,8 @@
           </div>
           <div class="v-index__prog__content__item">
             <AppDate
-                    date="Mercredi 28 août"
-                    hour="17h00 – 19h00 – date et horaire à confirmer"
+                    date="Mercredi 27 août 2025"
+                    hour="17h00 – 19h00"
                     location="Fondation ForPro – Chemin de la Galaise 23A 1228 Plan-les-Ouates"
                     subtitle="Thème&nbsp;: Réseaux et partenaires soutien pour les formateur.rices d’apprenties"
                     link_inscription="https://framaforms.org/rendez-vous-des-formateurrices-mercredi-28-aout-2025-1745313882"
