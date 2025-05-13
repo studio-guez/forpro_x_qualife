@@ -59,7 +59,7 @@ defineProps<{
 
   &:before {
     content: '';
-    background: var(--app-color--blue);
+    background: var(--app-color--orange);
     position: absolute;
     top: 0;
     left: 0;

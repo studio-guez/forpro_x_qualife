@@ -22,7 +22,7 @@
         <div class="v-index__dates-1">
           <div class="v-index__dates-1__bar">
             <div class="v-index__rect"
-                 style="background: var(--app-color--green)"
+                 style="background: var(--app-color--orange)"
             />
           </div>
           <div class="v-index__dates-1__date">
@@ -76,7 +76,7 @@
                     hour="08h00 10h00 – 10h00 12h00"
                     location="Fondation ForPro - Route de la Galaise 23A, 1228 Plan-les-Ouates"
                     subtitle='Thème&nbsp;: Connaissance du public adolescent'
-                    link_resources="https://nextcloud.for-pro.ch/s/WDpy9QD7tFneerB"
+                    link_resources="https://nextcloud.for-pro.ch/s/XXQxCXP9XHdeiZL"
             >
               <p>Animé par Soizic de Montalier, psychologue clinicienne et du travail, spécialisée dans l’accompagnement des adolescents et l’analyse des pratiques professionnelles.</p>
             </AppDate>
@@ -87,7 +87,7 @@
                     hour="16h30 - 18h30"
                     location="Fondation Qualife - Rue Adrien-Lachenal 18 1207 Genève"
                     subtitle="Thème&nbsp;: Le rôle des formateur.rices d'apprenti.es - Partage d'expériences & Apports théoriques"
-                    link_inscription="https://framaforms.org/rendez-vous-des-formateurrices-mardi-3-juin-2025-1745312862"
+                    link_inscription="https://framaforms.org/rendez-vous-des-formateurrices-mardi-10-juin-2025-1745312862"
             >
               <p>Former un.e apprenti.e, transmettre et évaluer, comment et avec quels outils&nbsp;?</p>
             </AppDate>
@@ -98,7 +98,7 @@
                     hour="17h00 – 19h00"
                     location="Fondation ForPro – Chemin de la Galaise 23A 1228 Plan-les-Ouates"
                     subtitle="Thème&nbsp;: Réseaux et partenaires soutien pour les formateur.rices d’apprenties"
-                    link_inscription="https://framaforms.org/rendez-vous-des-formateurrices-mercredi-28-aout-2025-1745313882"
+                    link_inscription="https://framaforms.org/rendez-vous-des-formateurrices-mercredi-27-aout-2025-1745313882"
             >
               <p>Kiosques et temps d’échanges autour de l’offre de soutien pour les formateurs et apprenti.es dual</p>
             </AppDate>
