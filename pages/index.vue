@@ -85,9 +85,9 @@
             <AppDate
                     date="Mardi 10 juin 2025"
                     hour="16h30 - 18h30"
+                    :is_complete="true"
                     location="Fondation Qualife - Rue Adrien-Lachenal 18 1207 Genève"
                     subtitle="Thème&nbsp;: Le rôle des formateur.rices d'apprenti.es - Partage d'expériences & Apports théoriques"
-                    link_inscription="https://framaforms.org/rendez-vous-des-formateurrices-mardi-10-juin-2025-1745312862"
             >
               <p>Former un.e apprenti.e, transmettre et évaluer, comment et avec quels outils&nbsp;?</p>
             </AppDate>
