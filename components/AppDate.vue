@@ -3,7 +3,7 @@
     >
       <div class="v-app-date__header">
         <div class="v-app-date__header__date">
-          <div>{{date}}</div>
+          <div>{{date}}<span v-if="is_complete" style="color: var(--app-color--orange)">&emsp;COMPLET!</span></div>
           <div>{{hour}}</div>
         </div>
         <div class="v-app-date__header__text">
@@ -40,6 +40,7 @@ defineProps<{
     subtitle?: string
     link_inscription?: string
     link_resources?: string
+    is_complete?: boolean
 }>()
 </script>
 
