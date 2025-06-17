@@ -95,7 +95,7 @@
           <div class="v-index__prog__content__item">
             <AppDate
                     date="Mercredi 27 août 2025"
-                    hour="8h à 9h30"
+                    hour="8h - 10h"
                     location="Fondation ForPro – Chemin de la Galaise 23A 1228 Plan-les-Ouates"
                     subtitle="Thème&nbsp;: Réseaux et partenaires soutien pour les formateur.rices d’apprenties"
                     link_inscription="https://framaforms.org/rendez-vous-des-formateurrices-mercredi-27-aout-2025-1745313882"
