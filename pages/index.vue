@@ -88,6 +88,7 @@
                     :is_complete="true"
                     location="Fondation Qualife - Rue Adrien-Lachenal 18 1207 Genève"
                     subtitle="Thème&nbsp;: Le rôle des formateur.rices d'apprenti.es - Partage d'expériences & Apports théoriques"
+                    link_resources="/ressources-v20260610.zip"
             >
               <p>Former un.e apprenti.e, transmettre et évaluer, comment et avec quels outils&nbsp;?</p>
             </AppDate>
