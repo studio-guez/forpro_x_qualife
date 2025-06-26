@@ -98,10 +98,16 @@
                     date="Mercredi 27 août 2025"
                     hour="8h - 10h"
                     location="Fondation ForPro – Chemin de la Galaise 23A 1228 Plan-les-Ouates"
-                    subtitle="Thème&nbsp;: Réseaux et partenaires soutien pour les formateur.rices d’apprenties"
+                    subtitle="Thème&nbsp;: réseaux et partenaires, onboarding apprenti.e"
                     link_inscription="https://framaforms.org/rendez-vous-des-formateurrices-mercredi-27-aout-2025-1745313882"
             >
-              <p>Kiosques et temps d’échanges autour de l’offre de soutien pour les formateurs et apprenti.es dual</p>
+              <p>
+                « C’est la rentrée&nbsp;! Développez vos connaissances des offres de soutien (réseaux et partenaires) pour les formateur-rices et créez / renforcez le lien avec votre apprenti·e pour bien démarrer l’année... en douceur(s). »
+              </p>
+              <p>
+                Attention évènement en duo, merci de venir accompagné de votre apprenti·e (si possible)
+                <br>Le cas échéant, aucun problème, des jeunes apprenti.es seront également présents pour vous permettre le même niveau d’aventure&nbsp;!
+              </p>
             </AppDate>
           </div>
           <div class="v-index__prog__content__item">
