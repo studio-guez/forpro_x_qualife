@@ -143,7 +143,7 @@
               </p>
               <p>
                 Fondation ForPro :
-                <br><a target="_blank" href="tel:+410763761061">076 376 10 61</a>
+                <br><a target="_blank" href="tel:+41225522442">+41 22 552 24 42</a>
                 <br>ou <a target="_blank" href="mailto:desk@for-pro.ch">desk@for-pro.ch</a>
               </p>
             </div>
