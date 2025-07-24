@@ -112,8 +112,8 @@
           </div>
           <div class="v-index__prog__content__item">
             <AppDate
-                    date="Jeudi 16 octobre | 8 heures 30 - 10 heures 30"
-                    hour="date et horaire à venir"
+                    date="Jeudi 16 octobre"
+                    hour="8h30 - 10h30"
                     location="Fondation Qualife - Rue Adrien-Lachenal 18 1207 Genève"
                     subtitle="Thème&nbsp;: Produire et former"
                     link_inscription="https://framaforms.org/rendez-vous-des-formateurrices-octobre-2025-1745314190"
