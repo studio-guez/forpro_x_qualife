@@ -132,7 +132,7 @@
             </AppDate>
           </div>
 
-          <div class="v-index__prog__content__item">
+          <div class="v-index__prog__content__item" style="width: 100%;">
             <div class="v-index__prog__content__item__text">
               <h3>contactez-nous&nbsp;:</h3>
 
