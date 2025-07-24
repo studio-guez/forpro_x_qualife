@@ -112,13 +112,13 @@
           </div>
           <div class="v-index__prog__content__item">
             <AppDate
-                    date="3ème semaine d’octobre 2025"
+                    date="Jeudi 16 octobre | 8 heures 30 - 10 heures 30"
                     hour="date et horaire à venir"
                     location="Fondation Qualife - Rue Adrien-Lachenal 18 1207 Genève"
                     subtitle="Thème&nbsp;: Produire et former"
                     link_inscription="https://framaforms.org/rendez-vous-des-formateurrices-octobre-2025-1745314190"
             >
-              <p>Gérer son temps et l’optimiser,  entre transmission et tâches inhérentes à la&nbsp;profession</p>
+              <p>Tension entre production et formation | Apports&nbsp;théoriques et échanges de pratiques en visio&#8209;conférence</p>
             </AppDate>
           </div>
           <div class="v-index__prog__content__item">
@@ -173,11 +173,7 @@
 
 
 <script setup lang="ts">
-import { defineProps } from 'vue'
 
-const props = defineProps<{
-    message?: string
-}>()
 </script>
 
 
