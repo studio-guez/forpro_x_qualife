@@ -95,17 +95,17 @@
           </div>
           <div class="v-index__prog__content__item">
             <AppDate
-                    date="Mercredi 27 août 2025"
+                    date="Mercredi 27 août 2025 "
                     hour="8h - 10h"
                     location="Fondation ForPro – Chemin de la Galaise 23A 1228 Plan-les-Ouates"
                     subtitle="Thème&nbsp;: réseaux et partenaires, onboarding apprenti.e"
-                    link_inscription="https://framaforms.org/rendez-vous-des-formateurrices-mercredi-27-aout-2025-1745313882"
+                    :is_complete="true"
             >
               <p>
                 « C’est la rentrée&nbsp;! Développez vos connaissances des offres de soutien (réseaux et partenaires) pour les formateur-rices et créez / renforcez le lien avec votre apprenti·e pour bien démarrer l’année... en douceur(s). »
               </p>
               <p>
-                Attention évènement en duo, merci de venir accompagné de votre apprenti·e (si possible)
+                  <span style="color: var(--app-color--blue)">Attention évènement en duo</span>, merci de venir accompagné de votre apprenti·e (si possible).
                 <br>Le cas échéant, aucun problème, des jeunes apprenti.es seront également présents pour vous permettre le même niveau d’aventure&nbsp;!
               </p>
             </AppDate>
@@ -116,19 +116,21 @@
                     hour="8h30 - 10h30"
                     location="Fondation Qualife - Rue Adrien-Lachenal 18 1207 Genève"
                     subtitle="Thème&nbsp;: Produire et former"
-                    link_inscription="https://framaforms.org/rendez-vous-des-formateurrices-octobre-2025-1745314190"
+                    :is_complete="true"
             >
-              <p>Tension entre production et formation | Apports&nbsp;théoriques et échanges de pratiques en visio&#8209;conférence</p>
+              <p>Tension entre production et formation | Apports&nbsp;théoriques et échanges de pratiques en visio&#8209;conférence.</p>
             </AppDate>
           </div>
           <div class="v-index__prog__content__item">
             <AppDate
-                    date="Clôture de la programmation en décembre 2025"
-                    hour="date et horaire à venir"
+                    date="Jeudi 11 décembre 2025"
+                    hour="18h00 - 21h30"
                     location="Fondation ForPro – Chemin de la Galaise 23A 1228 Plan-les-Ouates"
+                    subtitle="Thème&nbsp;: Clôture de la programmation"
                     link_inscription="https://framaforms.org/rendez-vous-des-formateurrices-decembre-2025-1745314433"
             >
-              <p>Evénement festif pour réunir la communauté, conférence, réseautage et apéritif dinatoire</p>
+              <p>Evénement festif pour réunir la communauté, conférence, réseautage et apéritif dinatoire.</p>
+                <p><span style="color: var(--app-color--blue)">Attention évènement en duo</span>, merci de venir accompagné de votre apprenti·e (si possible).</p>
             </AppDate>
           </div>
 
