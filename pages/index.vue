@@ -64,78 +64,36 @@
 
 
 
-      <div class="v-index__prog">
-        <div class="v-index__prog__header">
+      <div class="v-index__section"
+           v-if="data.events.length > 0"
+      >
+        <div class="v-index__section__header">
           <h2>au Programme</h2>
         </div>
 
-        <div class="v-index__prog__content">
-          <div class="v-index__prog__content__item">
+        <div class="v-index__section__content">
+          <div class="v-index__section__content__item"
+               v-for="event in data.events"
+          >
             <AppDate
-                    date="Lundi 14 avril 2025"
-                    hour="08h00 10h00 – 10h00 12h00"
-                    location="Fondation ForPro - Route de la Galaise 23A, 1228 Plan-les-Ouates"
-                    subtitle='Thème&nbsp;: Connaissance du public adolescent'
-                    link_resources="https://nextcloud.for-pro.ch/s/2gA3zD9oMRSAxTz"
+              :date="event.date"
+              :hour="event.hour"
+              :location="event.location"
+              :subtitle="event.subtitle"
+              :link_inscription="event.link_inscription"
+              :link_resources="event.link_resources"
+              :is_complete="event.is_complete"
             >
-              <p>Animé par Soizic de Montalier, psychologue clinicienne et du travail, spécialisée dans l’accompagnement des adolescents et l’analyse des pratiques professionnelles.</p>
+              <div v-html="event.content"/>
             </AppDate>
           </div>
-          <div class="v-index__prog__content__item">
-            <AppDate
-                    date="Mardi 10 juin 2025"
-                    hour="16h30 - 18h30"
-                    :is_complete="true"
-                    location="Fondation Qualife - Rue Adrien-Lachenal 18 1207 Genève"
-                    subtitle="Thème&nbsp;: Le rôle des formateur.rices d'apprenti.es - Partage d'expériences & Apports théoriques"
-                    link_resources="https://nextcloud.for-pro.ch/s/zTk9TCZPSTcrZC2"
-            >
-              <p>Former un.e apprenti.e, transmettre et évaluer, comment et avec quels outils&nbsp;?</p>
-            </AppDate>
-          </div>
-          <div class="v-index__prog__content__item">
-            <AppDate
-                    date="Mercredi 27 août 2025 "
-                    hour="8h - 10h"
-                    location="Fondation ForPro – Chemin de la Galaise 23A 1228 Plan-les-Ouates"
-                    subtitle="Thème&nbsp;: réseaux et partenaires, onboarding apprenti.e"
-                    :is_complete="true"
-            >
-              <p>
-                « C’est la rentrée&nbsp;! Développez vos connaissances des offres de soutien (réseaux et partenaires) pour les formateur-rices et créez / renforcez le lien avec votre apprenti·e pour bien démarrer l’année... en douceur(s). »
-              </p>
-              <p>
-                  <span style="color: var(--app-color--blue)">Attention évènement en duo</span>, merci de venir accompagné de votre apprenti·e (si possible).
-                <br>Le cas échéant, aucun problème, des jeunes apprenti.es seront également présents pour vous permettre le même niveau d’aventure&nbsp;!
-              </p>
-            </AppDate>
-          </div>
-          <div class="v-index__prog__content__item">
-            <AppDate
-                    date="Jeudi 16 octobre"
-                    hour="8h30 - 10h30"
-                    location="Fondation Qualife - Rue Adrien-Lachenal 18 1207 Genève"
-                    subtitle="Thème&nbsp;: Produire et former"
-                    :is_complete="true"
-            >
-              <p>Tension entre production et formation | Apports&nbsp;théoriques et échanges de pratiques en visio&#8209;conférence.</p>
-            </AppDate>
-          </div>
-          <div class="v-index__prog__content__item">
-            <AppDate
-                    date="Jeudi 11 décembre 2025"
-                    hour="18h00 - 21h30"
-                    location="Fondation ForPro – Chemin de la Galaise 23A 1228 Plan-les-Ouates"
-                    subtitle="Thème&nbsp;: Clôture de la programmation"
-                    link_inscription="https://framaforms.org/rendez-vous-des-formateurrices-decembre-2025-1745314433"
-            >
-              <p>Evénement festif pour réunir la communauté, conférence, réseautage et apéritif dinatoire.</p>
-                <p><span style="color: var(--app-color--blue)">Attention évènement en duo</span>, merci de venir accompagné de votre apprenti·e (si possible).</p>
-            </AppDate>
-          </div>
+        </div>
+      </div>
 
-          <div class="v-index__prog__content__item" style="width: 100%;">
-            <div class="v-index__prog__content__item__text">
+      <div class="v-index__section">
+        <div class="v-index__section__content">
+          <div class="v-index__section__content__item" style="width: 100%;">
+            <div class="v-index__section__content__item__text">
               <h3>contactez-nous&nbsp;:</h3>
 
               <p>
@@ -175,6 +133,8 @@
 
 
 <script setup lang="ts">
+import {data} from './index_data'
+
 
 </script>
 
@@ -366,14 +326,14 @@
   }
 }
 
-.v-index__prog {
+.v-index__section {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 5rem;
 }
 
-.v-index__prog__header {
+.v-index__section__header {
   width: calc(100% / 14 * 12);
   box-sizing: border-box;
 
@@ -382,7 +342,7 @@
   }
 }
 
-.v-index__prog__content {
+.v-index__section__content {
   --gap: 2rem;
 
   width: calc(100% / 14 * 12);
@@ -400,7 +360,7 @@
   }
 }
 
-.v-index__prog__content__item {
+.v-index__section__content__item {
   width: calc( (100% - var(--gap)) / 2 );
   box-sizing: border-box;
 
@@ -409,7 +369,7 @@
   }
 }
 
-.v-index__prog__content__item__text {
+.v-index__section__content__item__text {
   h3 {
     font-size: 1.5rem;
     line-height: 1.1em;
