@@ -90,9 +90,46 @@
         </div>
       </div>
 
+
+      <div class="v-index__section v-index__section--archive"
+           v-if="data.archive.length > 0"
+      >
+        <div class="v-index__section__header">
+          <h2>Archives</h2>
+        </div>
+
+        <div class="v-index__section__content">
+          <div class="v-index__section__content__toggle"
+               v-for="events in data.archive"
+          >
+              <h3>{{events.year}}</h3>
+            <div class="v-index__section__content">
+              <div class="v-index__section__content__item v-index__section__content__item--full"
+                   v-for="event in events.events"
+              >
+                <AppDate
+                  :date="event.date"
+                  :hour="event.hour"
+                  :location="event.location"
+                  :subtitle="event.subtitle"
+                  :link_inscription="event.link_inscription"
+                  :link_resources="event.link_resources"
+                  :is_complete="event.is_complete"
+                  :is_archives="true"
+                >
+                  <div v-html="event.content"/>
+                </AppDate>
+              </div>
+            </div>
+            <button class="v-index__section__content__toggle__button app-button--green app-button app-button--small">Afficher plus</button>
+          </div>
+        </div>
+
+      </div>
+
       <div class="v-index__section">
         <div class="v-index__section__content">
-          <div class="v-index__section__content__item" style="width: 100%;">
+          <div class="v-index__section__content__item v-index__section__content__item--full">
             <div class="v-index__section__content__item__text">
               <h3>contactez-nous&nbsp;:</h3>
 
@@ -331,6 +368,18 @@ import {data} from './index_data'
   flex-direction: column;
   align-items: center;
   margin-bottom: 5rem;
+
+  &.v-index__section--archive {
+    h3 {
+      width: 100%;
+      text-align: left;
+      font-size: 1.5rem;
+      line-height: 1.1em;
+      margin-top: 0;
+      margin-bottom: 1.1em;
+      color: var(--app-color--orange);
+    }
+  }
 }
 
 .v-index__section__header {
@@ -358,6 +407,32 @@ import {data} from './index_data'
   @media (max-width: 650px) {
     width: calc(100% / 14 * 14);
   }
+
+  .v-index__section--archive & {
+    gap: 2rem var(--gap);
+  }
+}
+
+.v-index__section__content__toggle {
+  height: 10rem;
+  overflow: hidden;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 10rem;
+    background: linear-gradient(to top, rgba(255,255,255,1) 2rem, rgba(255,255,255,0) 100%);
+    bottom: 0;
+    left: 0;
+  }
+
+}
+.v-index__section__content__toggle__button {
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
 }
 
 .v-index__section__content__item {
@@ -365,6 +440,10 @@ import {data} from './index_data'
   box-sizing: border-box;
 
   @media (max-width: 1150px) {
+    width: 100%;
+  }
+
+  &.v-index__section__content__item--full {
     width: 100%;
   }
 }
