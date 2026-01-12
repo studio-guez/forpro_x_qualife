@@ -24,7 +24,7 @@ export const data: {
         {
           date: "Lundi 14 avril 2025",
           hour: "08h00 10h00 – 10h00 12h00",
-          location: "Fondation ForPro - Route de la Galaise 23A, 1228 Plan-les-Ouates",
+          location: "Fondation ForPro - Route de la Galaise 23A, 1228 Plan&#8209;les&#8209;Ouates",
           subtitle: 'Thème&nbsp;: Connaissance du public adolescent',
           link_resources: "https://nextcloud.for-pro.ch/s/2gA3zD9oMRSAxTz",
           content: `<p>Animé par Soizic de Montalier, psychologue clinicienne et du travail, spécialisée dans l’accompagnement des adolescents et l’analyse des pratiques professionnelles.</p>`
@@ -42,7 +42,7 @@ export const data: {
           date: "Mercredi 27 août 2025 ",
           hour: "8h - 10h",
           is_complete: true,
-          location: "Fondation ForPro – Chemin de la Galaise 23A 1228 Plan-les-Ouates",
+          location: "Fondation ForPro – Chemin de la Galaise 23A 1228 Plan&#8209;les&#8209;Ouates",
           subtitle: "Thème&nbsp;: réseaux et partenaires, onboarding apprenti.e",
           content: `
         <p>
@@ -65,7 +65,7 @@ export const data: {
         {
           date: "Jeudi 11 décembre 2025",
           hour: "18h00 - 21h30",
-          location: "Fondation ForPro – Chemin de la Galaise 23A 1228 Plan-les-Ouates",
+          location: "Fondation ForPro – Chemin de la Galaise 23A 1228 Plan&#8209;les&#8209;Ouates",
           subtitle: "Thème&nbsp;: Clôture de la programmation",
           link_inscription: "https://framaforms.org/rendez-vous-des-formateurrices-decembre-2025-1745314433",
           content: `
