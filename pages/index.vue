@@ -51,7 +51,8 @@
       <div class="v-index__intro">
         <div class="v-index__intro__content">
           <p>Les rendez-vous des formateurs et formatrices d’apprenti·es sont des espaces collaboratifs pensés pour créer une communauté active de professionnel·les en charge des apprenti·es. L’objectif est de valoriser le rôle des formateur·rices, d’offrir un lieu d’échange et de développer des ressources concrètes pour soutenir leur quotidien.</p>
-          <p>En décembre 2024, le&nbsp;kick-off des rendez-vous des formateur et formatrices d’apprenti∙es a réuni 35 acteurs et actrices de la formation d’apprenti∙es issu∙es de secteurs d’activité et tailles d’entreprises variées. Il a permis de travailler à l’identification des sujets et des formats prioritaires pour les formateurs et&nbsp;formatrices.</p>
+          <p>En décembre 2024, « le kick-off » du projet a réuni 35 acteurs et actrices de la formation d’apprenti∙es issu∙es de secteurs d’activité et tailles d’entreprises variées. Il a permis de travailler à l’identification des sujets et des formats prioritaires pour les formateurs et formatrices.</p>
+          <p>En 2025, dans la continuité du kick-off, une programmation annuelle co-construite avec les participant·es a vu le jour. Elle aborde des thématiques clés du rôle de formateur·rice : connaissance du public adolescent, posture et mission du formateur·rice, réseaux de soutien, articulation entre production et formation, et se clôture par un temps fort convivial dédié au bilan de l’année et à la projection vers 2026.</p>
         </div>
 
         <div class="v-index__intro__content__download">
