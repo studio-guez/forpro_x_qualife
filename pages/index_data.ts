@@ -16,24 +16,7 @@ export const data: {
     events: event[]
   }[]
 } = {
-  events: [
-    {
-      date: "Lundi 14 janvier 2026",
-      hour: "08h00 10h00 – 10h00 12h00",
-      location: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-      subtitle: 'lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-      link_resources: "https://nextcloud.for-pro.ch/s/2gA3zD9oMRSAxTz",
-      content: `<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus error fugit impedit iure libero maiores mollitia neque numquam officia perspiciatis, quaerat, quam ratione repellendus sed sint sunt vel voluptas voluptate.</p>`
-    },
-    {
-      date: "Mardi 21 avril 2026",
-      hour: "08h00 10h00 – 10h00 12h00",
-      location: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-      subtitle: 'lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-      link_resources: "https://nextcloud.for-pro.ch/s/2gA3zD9oMRSAxTz",
-      content: `<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus error fugit impedit iure libero maiores mollitia neque numquam officia perspiciatis, quaerat, quam ratione repellendus sed sint sunt vel voluptas voluptate.</p>`
-    },
-  ],
+  events: [],
   archive: [
     {
       year: "2025",

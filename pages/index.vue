@@ -122,7 +122,6 @@
                 </AppDate>
               </div>
             </div>
-            <button class="v-index__section__content__toggle__button app-button--green app-button app-button--small">Afficher plus</button>
           </div>
         </div>
 
@@ -415,19 +414,19 @@ import {data} from './index_data'
 }
 
 .v-index__section__content__toggle {
-  height: 10rem;
-  overflow: hidden;
-  position: relative;
-
-  &:after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 10rem;
-    background: linear-gradient(to top, rgba(255,255,255,1) 2rem, rgba(255,255,255,0) 100%);
-    bottom: 0;
-    left: 0;
-  }
+  //height: 10rem;
+  //overflow: hidden;
+  //position: relative;
+  //
+  //&:after {
+  //  content: '';
+  //  position: absolute;
+  //  width: 100%;
+  //  height: 10rem;
+  //  background: linear-gradient(to top, rgba(255,255,255,1) 2rem, rgba(255,255,255,0) 100%);
+  //  bottom: 0;
+  //  left: 0;
+  //}
 
 }
 .v-index__section__content__toggle__button {
