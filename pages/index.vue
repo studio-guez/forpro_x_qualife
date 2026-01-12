@@ -211,7 +211,6 @@ import {data} from './index_data'
   top: 0;
   left: 0;
   width: 100%;
-  background: white;
   z-index: 1000;
 }
 
