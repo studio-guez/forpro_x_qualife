@@ -67,11 +67,13 @@
       >
         <div class="v-index__section__content">
           <p>
-          Pour toute suggestion, proposition de thématique, contactez-nous, ou simplement pour être informé de la programmation lors de sa sortie, n’hésitez pas à nous contacter par e-mail :
+            Pour toute suggestion ou proposition de thématique, ou simplement pour être informé·e de la programmation lors de sa publication, n’hésitez pas à nous contacter par e-mail&nbsp;:
             <br>
-            <br><a class="app-button"
-               href="mailto:<EMAIL>"
-            >event@qualife.ch et desk@for-pro.ch</a>
+            <br>
+            <a class="app-button"
+               href="mailto:desk@for-pro.ch,event@qualife.ch?subject=Demande%20d%27informations%20ou%20suggestion&body=Bonjour,%0D%0AJe vous contacte depuis le site pour%0D%0A..."
+            >desk@for-pro.ch et event@qualife.ch
+            </a>
             <br>
             <br>On se réjouit de vous retrouver très bientôt.
           </p>
