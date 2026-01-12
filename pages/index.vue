@@ -63,6 +63,21 @@
         </div>
       </div>
 
+      <div class="v-index__section v-index__section--color"
+      >
+        <div class="v-index__section__content">
+          <p>
+          Pour toute suggestion, proposition de thématique, contactez-nous, ou simplement pour être informé de la programmation lors de sa sortie, n’hésitez pas à nous contacter par e-mail :
+            <br>
+            <br><a class="app-button"
+               href="mailto:<EMAIL>"
+            >event@qualife.ch et desk@for-pro.ch</a>
+            <br>
+            <br>On se réjouit de vous retrouver très bientôt.
+          </p>
+        </div>
+      </div>
+
 
 
       <div class="v-index__section"
@@ -380,11 +395,30 @@ import {data} from './index_data'
       color: var(--app-color--orange);
     }
   }
+
+  &.v-index__section--color {
+    color: var(--app-color--orange);
+    border: 2px solid var(--app-color--orange);
+    border-radius: 2rem;
+
+    p {
+      font-size: 1.5rem;
+    }
+  }
 }
 
 .v-index__section__header {
   width: calc(100% / 14 * 12);
   box-sizing: border-box;
+  margin-bottom: 2rem;
+
+  > *:first-child {
+    margin-top: 0;
+  }
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
 
   @media (max-width: 650px) {
     width: calc(100% / 14 * 14);

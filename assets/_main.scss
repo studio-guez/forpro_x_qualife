@@ -96,6 +96,15 @@ h3 {
       background: var(--app-color--green);
     }
   }
+  &.app-button--negative {
+    color: var(--app-color--green);
+    background: white;
+
+    &:hover {
+      background: white;
+      box-shadow: 0 0 0 2px var(--app-color--blue);
+    }
+  }
 }
 a.app-button {
   text-decoration: none;
