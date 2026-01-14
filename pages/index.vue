@@ -214,6 +214,7 @@ import {data} from './index_data'
   left: 0;
   width: 100%;
   z-index: 1000;
+  background: white;
 }
 
 .v-index__top-bar__wrap {
