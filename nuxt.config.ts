@@ -7,7 +7,15 @@ export default defineNuxtConfig({
     '~/assets/_main.scss',
   ],
 
-  ssr: false,
+  ssr: true,
+
+  runtimeConfig: {
+    secret_API_AUTH_EMAIL: process.env.API_AUTH_EMAIL,
+    secret_API_AUTH_PASSWORD: process.env.API_AUTH_PASSWORD,
+    public: {
+      apiUrl: process.env.NUXT_API_URL,
+    }
+  },
 
   app:{
     baseURL: '/',

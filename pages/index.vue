@@ -83,7 +83,7 @@
 
 
       <div class="v-index__section"
-           v-if="data.events.length > 0"
+           v-if="data?.result.events && data?.result.events.length > 0"
       >
         <div class="v-index__section__header">
           <h2>au Programme</h2>
@@ -91,18 +91,18 @@
 
         <div class="v-index__section__content">
           <div class="v-index__section__content__item"
-               v-for="event in data.events"
+               v-for="event in data.result.events"
           >
             <AppDate
-              :date="event.date"
-              :hour="event.hour"
+              :date="event.datetime"
+              :hour="event.time"
               :location="event.location"
-              :subtitle="event.subtitle"
-              :link_inscription="event.link_inscription"
-              :link_resources="event.link_resources"
-              :is_complete="event.is_complete"
+              :subtitle="event.title"
+              :link_inscription="event.ticketing_url"
+              :link_resources="event.files"
+              :is_complete="event.registration === 'true'"
             >
-              <div v-html="event.content"/>
+              <div v-html="event.information"/>
             </AppDate>
           </div>
         </div>
@@ -110,7 +110,7 @@
 
 
       <div class="v-index__section v-index__section--archive"
-           v-if="data.archive.length > 0"
+           v-if="data?.result.archive && data?.result.archive.length > 0"
       >
         <div class="v-index__section__header">
           <h2>Archives</h2>
@@ -118,7 +118,7 @@
 
         <div class="v-index__section__content">
           <div class="v-index__section__content__toggle"
-               v-for="events in data.archive"
+               v-for="events in data.result.archive"
           >
               <h3>{{events.year}}</h3>
             <div class="v-index__section__content">
@@ -126,16 +126,16 @@
                    v-for="event in events.events"
               >
                 <AppDate
-                  :date="event.date"
-                  :hour="event.hour"
+                  :date="event.datetime"
+                  :hour="event.time"
                   :location="event.location"
-                  :subtitle="event.subtitle"
-                  :link_inscription="event.link_inscription"
-                  :link_resources="event.link_resources"
-                  :is_complete="event.is_complete"
+                  :subtitle="event.title"
+                  :link_inscription="event.ticketing_url"
+                  :link_resources="event.files"
+                  :is_complete="event.registration === 'true'"
                   :is_archives="true"
                 >
-                  <div v-html="event.content"/>
+                  <div v-html="event.information"/>
                 </AppDate>
               </div>
             </div>
@@ -187,7 +187,51 @@
 
 
 <script setup lang="ts">
-import {data} from './index_data'
+type fetchedEvent = {
+  title: string,
+  location: string,
+  datetime: string,
+  time: string,
+  registration: string,
+  information: string,
+  ticketing_url: string,
+  files: string,
+}
+
+type FetchData = CMS_API_Response & {
+  result: {
+    events: fetchedEvent[],
+    archive: {
+      year: string,
+      events: fetchedEvent[]
+    }[]
+  }
+}
+
+
+
+const { data, status } = await useFetch<FetchData>('/api/CMS_KQLRequest', {
+  lazy: true,
+  method: 'POST',
+  body: {
+    query: 'site',
+    select: {
+      events: {
+        query: "site.children()",
+        select: {
+          title: true,
+          location: true,
+          datetime: true,
+          time: true,
+          registration: true,
+          information: true,
+          ticketing_url: true,
+          files: true,
+        }
+      },
+    }
+  }
+})
 
 
 </script>
