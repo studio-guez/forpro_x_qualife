@@ -5,7 +5,7 @@
       <div class="v-app-date__header">
         <div class="v-app-date__header__date">
           <div>
-            <span v-html="date"/>
+            <span v-html="formaterDate(date)"/>
             <span v-if="!is_archives && is_complete" style="color: var(--app-color--orange)">&emsp;COMPLET!</span>
           </div>
           <div v-if="!is_archives"
@@ -26,8 +26,8 @@
       </div>
 
       <div class="v-app-date__links">
-        <a v-if="link_inscription && !is_complete"  target="_blank" class="app-button app-button--blue" :href="link_inscription" >Inscription</a>
-        <a v-if="link_resources"    target="_blank" class="app-button app-button--green" :href="link_resources"   >Ressources</a>
+        <a v-if="link_inscription && !is_complete"  target="_blank" class="app-button app-button--blue"   :href="link_inscription" >Inscription</a>
+        <a v-if="link_resources"                    target="_blank" class="app-button app-button--green"  :href="link_resources"   >Ressources</a>
       </div>
     </section>
 </template>
@@ -38,6 +38,7 @@
 
 <script setup lang="ts">
 import { defineProps } from 'vue'
+import {formaterDate} from "~/shared/date_formatter";
 
 defineProps<{
     date: string
