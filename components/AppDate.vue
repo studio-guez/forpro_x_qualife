@@ -26,7 +26,7 @@
       </div>
 
       <div class="v-app-date__links">
-        <a v-if="link_inscription"  target="_blank" class="app-button app-button--blue" :href="link_inscription" >Inscription</a>
+        <a v-if="link_inscription && !is_complete"  target="_blank" class="app-button app-button--blue" :href="link_inscription" >Inscription</a>
         <a v-if="link_resources"    target="_blank" class="app-button app-button--green" :href="link_resources"   >Ressources</a>
       </div>
     </section>
@@ -47,7 +47,7 @@ defineProps<{
     subtitle?: string
     link_inscription?: string
     link_resources?: string
-    is_complete?: boolean
+    is_complete: boolean
     is_archives?: boolean
 }>()
 </script>

@@ -21,8 +21,6 @@ export default defineEventHandler(async (event) => {
     body,
   })
 
-  console.log('dataApi', dataApi.data)
-
   return dataApi
 })
 

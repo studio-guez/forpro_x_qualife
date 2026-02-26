@@ -3,6 +3,7 @@
     >
       <div class="v-index__top-bar">
         <div class="v-index__top-bar__wrap">
+          <div class="v-index__top-bar__wrap__text">{{}}</div>
           <img class="v-index__top-bar__wrap__img"
                src="/images/header.svg" alt="logo">
         </div>
@@ -83,7 +84,7 @@
 
 
       <div class="v-index__section"
-           v-if="data?.result.events && data?.result.events.length > 0"
+           v-if="classedEvent && classedEvent.events.length > 0"
       >
         <div class="v-index__section__header">
           <h2>au Programme</h2>
@@ -91,7 +92,7 @@
 
         <div class="v-index__section__content">
           <div class="v-index__section__content__item"
-               v-for="event in data.result.events"
+               v-for="event in classedEvent.events"
           >
             <AppDate
               :date="event.datetime"
@@ -100,7 +101,7 @@
               :subtitle="event.title"
               :link_inscription="event.ticketing_url"
               :link_resources="event.files"
-              :is_complete="event.registration === 'true'"
+              :is_complete="event.registration === 'false' && event.ticketing_url.length > 0"
             >
               <div v-html="event.information"/>
             </AppDate>
@@ -110,7 +111,7 @@
 
 
       <div class="v-index__section v-index__section--archive"
-           v-if="data?.result.archive && data?.result.archive.length > 0"
+           v-if="classedEvent && classedEvent.archive.length > 0"
       >
         <div class="v-index__section__header">
           <h2>Archives</h2>
@@ -118,7 +119,7 @@
 
         <div class="v-index__section__content">
           <div class="v-index__section__content__toggle"
-               v-for="events in data.result.archive"
+               v-for="events in classedEvent.archive.toReversed()"
           >
               <h3>{{events.year}}</h3>
             <div class="v-index__section__content">
@@ -216,6 +217,13 @@ const { data, status } = await useFetch<FetchData>('/api/CMS_KQLRequest', {
   body: {
     query: 'site',
     select: {
+      infos: {
+        query: "site",
+        select: {
+          intro_text: true,
+          kickoff_url: true,
+        }
+      },
       events: {
         query: "site.children()",
         select: {
@@ -230,6 +238,47 @@ const { data, status } = await useFetch<FetchData>('/api/CMS_KQLRequest', {
         }
       },
     }
+  }
+})
+
+const classedEvent: ComputedRef<{
+  events: fetchedEvent[],
+  archive: {
+    year: string,
+    events: fetchedEvent[]
+  }[]
+}> = computed(() => {
+
+  if( !data.value ) return {
+    events: [],
+    archive: [],
+  }
+
+  const pastEvent = data.value?.result.events.filter(event => {
+    const date = new Date(event.datetime)
+    return date < new Date()
+  }) || []
+
+  const pastEventByYear: {
+      year: string,
+      events: fetchedEvent[]
+  }[] = Object.entries(pastEvent.reduce((acc: Record<string, fetchedEvent[]>, event) => {
+    const date = new Date(event.datetime)
+    const year = date.getFullYear().toString()
+
+    if (!acc[year]) acc[year] = []
+    acc[year].push(event)
+    return acc
+  }, {})).map(([year, events]) => ({ year, events }))
+
+  const futureEvent = data.value?.result.events.filter(event => {
+    const date = new Date(event.datetime)
+    return date >= new Date()
+  }) || []
+
+  return {
+    events: futureEvent,
+    archive: pastEventByYear,
   }
 })
 
