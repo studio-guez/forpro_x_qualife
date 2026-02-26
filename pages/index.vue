@@ -234,7 +234,9 @@ const { data, status } = await useFetch<FetchData>('/api/CMS_KQLRequest', {
           registration: true,
           information: true,
           ticketing_url: true,
-          files: true,
+          files: {
+            query: "page.content.files",
+          },
         }
       },
     }
