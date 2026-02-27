@@ -50,14 +50,14 @@
 
 
       <div class="v-index__intro">
-        <div class="v-index__intro__content">
-          <p>Les rendez-vous des formateurs et formatrices d’apprenti·es sont des espaces collaboratifs pensés pour créer une communauté active de professionnel·les en charge des apprenti·es. L’objectif est de valoriser le rôle des formateur·rices, d’offrir un lieu d’échange et de développer des ressources concrètes pour soutenir leur quotidien.</p>
-          <p>En décembre 2024, « le kick-off » du projet a réuni 35 acteurs et actrices de la formation d’apprenti∙es issu∙es de secteurs d’activité et tailles d’entreprises variées. Il a permis de travailler à l’identification des sujets et des formats prioritaires pour les formateurs et formatrices.</p>
-          <p>En 2025, dans la continuité du kick-off, une programmation annuelle co-construite avec les participant·es a vu le jour. Elle aborde des thématiques clés du rôle de formateur·rice : connaissance du public adolescent, posture et mission du formateur·rice, réseaux de soutien, articulation entre production et formation, et se clôture par un temps fort convivial dédié au bilan de l’année et à la projection vers 2026.</p>
-        </div>
+        <div class="v-index__intro__content"
+             v-html="data?.result.infos.intro_text"
+        />
 
-        <div class="v-index__intro__content__download">
-          <a href="https://nextcloud.for-pro.ch/s/6K99YoqKzjDmx27"
+        <div class="v-index__intro__content__download"
+             v-if="data?.result.infos.kickoff_url"
+        >
+          <a :href="data.result.infos.kickoff_url"
              target="_blank"
              class="v-index__download__button app-button app-button--xl"
           >Ressources atelier kick-off</a>
@@ -67,17 +67,24 @@
       <div class="v-index__section v-index__section--color"
       >
         <div class="v-index__section__content">
-          <p>
-            Pour toute suggestion ou proposition de thématique, ou simplement pour être informé·e de la programmation lors de sa publication, n’hésitez pas à nous contacter par e-mail&nbsp;:
-            <br>
-            <br>
-            <a class="app-button"
-               href="mailto:desk@for-pro.ch,event@qualife.ch?subject=Demande%20d%27informations%20ou%20suggestion&body=Bonjour,%0D%0AJe vous contacte depuis le site pour%0D%0A..."
-            >desk@for-pro.ch et event@qualife.ch
-            </a>
-            <br>
-            <br>On se réjouit de vous retrouver très bientôt.
-          </p>
+          <div>
+            <h2 v-if="data?.result.infos.information_title">
+              {{data?.result.infos.information_title}}
+            </h2>
+
+            <div v-if="data?.result.infos.information_blocks">
+              <template v-for="block of data.result.infos.information_blocks">
+                <div v-if="block.type === 'writer'"
+                     v-html="block.content.text"
+                />
+                <div v-else-if="block.type === 'cta'">
+                  <a class="app-button"
+                     :href="block.content.cta_url"
+                  >{{block.content.cta_title}}</a>
+                </div>
+              </template>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -188,6 +195,8 @@
 
 
 <script setup lang="ts">
+import type {CMS_API_Response, CMS_block} from "~/composable/cms_api";
+
 type fetchedEvent = {
   title: string,
   location: string,
@@ -201,6 +210,12 @@ type fetchedEvent = {
 
 type FetchData = CMS_API_Response & {
   result: {
+    infos: {
+      intro_text: string,
+      kickoff_url: string,
+      information_title: string,
+      information_blocks: CMS_block[]
+    },
     events: fetchedEvent[],
     archive: {
       year: string,
@@ -222,6 +237,10 @@ const { data, status } = await useFetch<FetchData>('/api/CMS_KQLRequest', {
         select: {
           intro_text: true,
           kickoff_url: true,
+          information_title: true,
+          information_blocks: {
+            query: "site.content.information_blocks.toBlocks",
+          },
         }
       },
       events: {
@@ -462,16 +481,15 @@ const classedEvent: ComputedRef<{
   width: calc(100% / 14 * 12);
   box-sizing: border-box;
 
-  > p {
-    font-size: 2rem;
-
-    @media (max-width: 650px) {
-      font-size: 1.5rem;
-    }
-  }
-
   @media (max-width: 650px) {
     width: calc(100% / 14 * 14);
+  }
+}
+:global(.v-index__intro__content > p) {
+  font-size: 2rem;
+
+  @media (max-width: 650px) {
+    font-size: 1.5rem;
   }
 }
 
@@ -502,6 +520,10 @@ const classedEvent: ComputedRef<{
       font-size: 1.5rem;
     }
   }
+}
+
+:global(.v-index__section.v-index__section--color p) {
+  font-size: 1.5rem;
 }
 
 .v-index__section__header {

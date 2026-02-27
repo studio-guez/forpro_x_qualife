@@ -4,12 +4,12 @@
 // Avant de lire les données, on regarde ces deux champs pour éviter les erreurs.
 
 
-type CMS_API_Response = {
+export type CMS_API_Response = {
     code: number,
     status: 'ok' | string,
 }
 
-type CMS_API_Image = {
+export type CMS_API_Image = {
     "extension": string,
     "filename": string,
     "height": number,
@@ -22,7 +22,7 @@ type CMS_API_Image = {
     "width": 50
 }
 
-type CMS_API_ImageObject = {
+export type CMS_API_ImageObject = {
     "alt": null,
     "tiny": CMS_API_Image,
     "small": CMS_API_Image,
@@ -33,77 +33,22 @@ type CMS_API_ImageObject = {
 }
 
 
-type CMS_API_people = {
-    prenom?: string,
-    nom?: string,
-    image?: CMS_API_ImageObject,
-    lien?: [],
-}
-
-type CMS_API_domaines_activite = {
-    "domaines"?: { "titre": string, "description": string }[],
-    "image"?: CMS_API_ImageObject,
-    /*     "id": string */
-}
-
-
-type CMS_API_hero = {
-    titre?: string,
-    texte?: string,
-}
-
-
-type CMS_API_Article = {
-    // title: string
-    accroche?: string,
-    main_title?: string
-    date?: string
-    resume?: string
-    contenu?: string | any[]
-    slug?: string
-    files?: {
-        id: string
-        uuid?: string
-        url: string
-        filename: string
-        name?: string
-    }[]
-}
-
-type CMS_API_Footer = {
-    adresse?: string
-    acces?: string
-    contact?: string
-    accueil?: string
-}
-
-type CMS_API_membre = {
-    nom?: string
-    email?: string
-}
-
-type CMS_API_team = {
-    profils_list?: CMS_API_profil[];
-}
-
-type CMS_API_profil = {
-  title?: string;
-  email?: string;
-  description?: string;
-  photo?: CMS_API_ImageObject;
-}
-
-
-
-type CMS_API_contact = {
-    intro?: string
-    etude_nom?: string
-    etude_email?: string
-    etude_tel?: string
-    adresse?: string
-    membres?: CMS_API_membre[] // ou { nom: string, email: string }[]
-    image?: CMS_API_ImageObject
-}
-
-type CMS_API_PhotoEquipe = CMS_API_ImageObject
-
+export type CMS_block =
+  {
+    "content": {
+      "cta_url": string,
+      "cta_title": string
+    },
+    "id": string,
+    "isHidden": false,
+    "type": "cta"
+  }
+  |
+  {
+    "content": {
+      "text": string
+    },
+    "id": string,
+    "isHidden": false,
+    "type": "writer"
+  }
