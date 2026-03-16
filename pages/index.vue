@@ -28,14 +28,14 @@
           </div>
           <div class="v-index__dates-1__date">
             <img class="v-index__date-image"
-                 src="/images/date_1.svg">
+                 :src="data?.result.infos.image_left.url || '/images/date_1.svg'">
           </div>
         </div>
 
         <div class="v-index__dates-2">
           <div class="v-index__dates-2__date">
             <img class="v-index__date-image"
-                 src="/images/date_2.svg">
+                 :src="data?.result.infos.image_right.url || '/images/date_2.svg'">
           </div>
           <div class="v-index__dates-2__bar">
             <div class="v-index__rect"
@@ -215,6 +215,12 @@ type FetchData = CMS_API_Response & {
       kickoff_url: string,
       information_title: string,
       information_blocks: CMS_block[]
+      image_left: {
+        url: string
+      },
+      image_right: {
+        url: string
+      },
     },
     events: fetchedEvent[],
     archive: {
@@ -240,6 +246,12 @@ const { data, status } = await useFetch<FetchData>('/api/CMS_KQLRequest', {
           information_title: true,
           information_blocks: {
             query: "site.content.information_blocks.toBlocks",
+          },
+          image_left: {
+            query: "site.content.image_left.toFiles.first()",
+          },
+          image_right: {
+            query: "site.content.image_right.toFiles.first()",
           },
         }
       },

@@ -17,8 +17,8 @@ export type CMS_API_Image = {
     "mime": string,
     "niceSize": "951 B",
     "template": "",
-    "type": "image",
-    "url": "http://localhost:8000/media/pages/home/0a94594deb-1751548581/capture-decran-2025-07-03-a-15.14.47-50x-q10.png",
+    "type": string,
+    "url": string,
     "width": 50
 }
 
