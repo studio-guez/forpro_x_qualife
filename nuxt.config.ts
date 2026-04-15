@@ -20,15 +20,60 @@ export default defineNuxtConfig({
   app:{
     baseURL: '/',
     head: {
+      htmlAttrs: {
+        lang: 'fr',
+      },
       title: 'Les rendez-vous des formateurs et formatrices',
       meta: [
-        { name: 'description', content: 'Les rendez-vous des formateur·rice·s d’apprenti·es sont des espaces collaboratifs pensés pour créer une communauté active de professionnel·les en charge des apprenti·es.' },
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { name: 'description', content: 'Les rendez-vous des formateur·rice·s d\'apprenti·es sont des espaces collaboratifs pensés pour créer une communauté active de professionnel·les en charge des apprenti·es.' },
+        { name: 'author', content: 'Fondation ForPro & Fondation Qualife' },
+        { name: 'theme-color', content: '#ffffff' },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:site_name', content: 'Les rendez-vous des formateurs et formatrices' },
+        { property: 'og:title', content: 'Les rendez-vous des formateurs et formatrices' },
+        { property: 'og:description', content: 'Les rendez-vous des formateur·rice·s d\'apprenti·es sont des espaces collaboratifs pensés pour créer une communauté active de professionnel·les en charge des apprenti·es.' },
+        { property: 'og:image', content: 'https://rendezvousdesformateurs.ch/og-image.png' },
+        { property: 'og:image:width', content: '1200' },
+        { property: 'og:image:height', content: '630' },
+        { property: 'og:url', content: 'https://rendezvousdesformateurs.ch' },
+        { property: 'og:locale', content: 'fr_CH' },
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:title', content: 'Les rendez-vous des formateurs et formatrices' },
+        { name: 'twitter:description', content: 'Les rendez-vous des formateur·rice·s d\'apprenti·es sont des espaces collaboratifs pensés pour créer une communauté active de professionnel·les en charge des apprenti·es.' },
+        { name: 'twitter:image', content: 'https://rendezvousdesformateurs.ch/og-image.png' },
       ],
       link: [
+        { rel: 'canonical', href: 'https://rendezvousdesformateurs.ch' },
         { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
         { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
         { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
         { rel: 'manifest', href: '/site.webmanifest' },
+      ],
+      script: [
+        {
+          type: 'application/ld+json',
+          innerHTML: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebSite',
+            name: 'Les rendez-vous des formateurs et formatrices',
+            url: 'https://rendezvousdesformateurs.ch',
+          }),
+        },
+        {
+          type: 'application/ld+json',
+          innerHTML: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            name: 'Fondation ForPro & Fondation Qualife',
+            url: 'https://rendezvousdesformateurs.ch',
+            sameAs: [
+              'https://www.for-pro.ch/entreprises',
+              'https://www.qualife.ch/actualites/',
+            ],
+          }),
+        },
       ]
     }
   },
