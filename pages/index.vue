@@ -5,14 +5,14 @@
         <div class="v-index__top-bar__wrap">
           <div class="v-index__top-bar__wrap__text">{{}}</div>
           <img class="v-index__top-bar__wrap__img"
-               src="/images/header.svg" alt="logo">
+               src="/images/header.svg" alt="Edition 2026">
         </div>
       </div>
 
       <div class="v-index__header">
         <div class="v-index__header__padding-top"/>
         <img class="v-index__header__logo-text"
-             src="/images/logo-text.svg" alt="logo">
+             src="/images/logo-text.svg" alt="Les rendez-vous des formateur·ices d'apprenti·es">
       </div>
 
 
@@ -177,14 +177,14 @@
 
       <footer class="v-index__footer">
         <div class="v-index__footer__content">
-          <a target="_blank" href="https://www.for-pro.ch/entreprises">for-pro.ch</a> |
-          <a target="_blank" href="https://www.qualife.ch/actualites/">qualife.ch</a>
+          <a target="_blank" rel="noopener" href="https://www.for-pro.ch/entreprises">for-pro.ch</a> |
+          <a target="_blank" rel="noopener" href="https://www.qualife.ch/actualites/">qualife.ch</a>
 
         </div>
 
         <div class="v-index__footer__content">
-          <a target="_blank" href="https://www.for-pro.ch/entreprises"><img src="/images/logo_forpro.svg" alt="logo forpro"></a>
-          <a target="_blank" href="https://www.qualife.ch/actualites/"><img src="/images/logo_qualife.svg" alt="logo qualife"></a>
+          <a target="_blank" rel="noopener" href="https://www.for-pro.ch/entreprises"><img src="/images/logo_forpro.svg" alt="Fondation ForPro"></a>
+          <a target="_blank" rel="noopener" href="https://www.qualife.ch/actualites/"><img src="/images/logo_qualife.svg" alt="Fondation Qualife"></a>
         </div>
       </footer>
     </main>
