@@ -107,7 +107,8 @@
               :location="event.location"
               :subtitle="event.title"
               :link_inscription="event.ticketing_url"
-              :link_resources="event.files"
+              :link_resources="event.resource_type ? (event.resource_type === 'file' ? event.pdf?.url : event.files) : null"
+              :resource_type="event.resource_type"
               :is_complete="event.registration === 'false' && event.ticketing_url.length > 0"
             >
               <div v-html="event.information"/>
@@ -139,7 +140,8 @@
                   :location="event.location"
                   :subtitle="event.title"
                   :link_inscription="event.ticketing_url"
-                  :link_resources="event.files"
+                  :link_resources="event.resource_type ? (event.resource_type === 'file' ? event.pdf?.url : event.files) : null"
+                  :resource_type="event.resource_type"
                   :is_complete="event.registration === 'true'"
                   :is_archives="true"
                 >
@@ -205,7 +207,9 @@ type fetchedEvent = {
   registration: string,
   information: string,
   ticketing_url: string,
+  resource_type: 'link' | 'file',
   files: string,
+  pdf: { url: string } | null,
 }
 
 type FetchData = CMS_API_Response & {
@@ -264,8 +268,15 @@ const { data, status } = await useFetch<FetchData>('/api/CMS_KQLRequest', {
           registration: true,
           information: true,
           ticketing_url: true,
+          resource_type: true,
           files: {
             query: "page.content.files",
+          },
+          pdf: {
+            query: "page.content.pdf.toFiles.first()",
+            select: {
+              url: true,
+            }
           },
         }
       },
