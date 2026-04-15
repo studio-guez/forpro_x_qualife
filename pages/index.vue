@@ -5,14 +5,14 @@
         <div class="v-index__top-bar__wrap">
           <div class="v-index__top-bar__wrap__text">{{}}</div>
           <img class="v-index__top-bar__wrap__img"
-               src="/images/header.svg" alt="Edition 2026">
+               :src="imgHeader" alt="Edition 2026">
         </div>
       </div>
 
       <div class="v-index__header">
         <div class="v-index__header__padding-top"/>
         <img class="v-index__header__logo-text"
-             src="/images/logo-text.svg" alt="Les rendez-vous des formateur·ices d'apprenti·es">
+             :src="imgLogoText" alt="Les rendez-vous des formateur·ices d'apprenti·es">
       </div>
 
 
@@ -28,14 +28,14 @@
           </div>
           <div class="v-index__dates-1__date">
             <img class="v-index__date-image"
-                 :src="data?.result.infos.image_left.url || '/images/date_1.svg'">
+                 :src="data?.result.infos.image_left.url || imgDate1">
           </div>
         </div>
 
         <div class="v-index__dates-2">
           <div class="v-index__dates-2__date">
             <img class="v-index__date-image"
-                 :src="data?.result.infos.image_right.url || '/images/date_2.svg'">
+                 :src="data?.result.infos.image_right.url || imgDate2">
           </div>
           <div class="v-index__dates-2__bar">
             <div class="v-index__rect"
@@ -185,8 +185,8 @@
         </div>
 
         <div class="v-index__footer__content">
-          <a target="_blank" rel="noopener" href="https://www.for-pro.ch/entreprises"><img src="/images/logo_forpro.svg" alt="Fondation ForPro"></a>
-          <a target="_blank" rel="noopener" href="https://www.qualife.ch/actualites/"><img src="/images/logo_qualife.svg" alt="Fondation Qualife"></a>
+          <a target="_blank" rel="noopener" href="https://www.for-pro.ch/entreprises"><img :src="imgLogoForpro" alt="Fondation ForPro"></a>
+          <a target="_blank" rel="noopener" href="https://www.qualife.ch/actualites/"><img :src="imgLogoQualife" alt="Fondation Qualife"></a>
         </div>
       </footer>
     </main>
@@ -198,6 +198,13 @@
 
 <script setup lang="ts">
 import type {CMS_API_Response, CMS_block} from "~/composable/cms_api";
+
+import imgHeader from '~/assets/images/header.svg';
+import imgLogoText from '~/assets/images/logo-text.svg';
+import imgDate1 from '~/assets/images/date_1.svg';
+import imgDate2 from '~/assets/images/date_2.svg';
+import imgLogoForpro from '~/assets/images/logo_forpro.svg';
+import imgLogoQualife from '~/assets/images/logo_qualife.svg';
 
 type fetchedEvent = {
   title: string,
