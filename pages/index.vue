@@ -315,6 +315,35 @@ const classedEvent: ComputedRef<{
   }
 })
 
+useHead({
+  script: computed(() => {
+    if (!classedEvent.value?.events.length) return []
+    return [
+      {
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify(classedEvent.value.events.map(event => ({
+          '@context': 'https://schema.org',
+          '@type': 'Event',
+          name: event.title,
+          startDate: event.datetime,
+          location: {
+            '@type': 'Place',
+            name: event.location,
+          },
+          organizer: {
+            '@type': 'Organization',
+            name: 'Fondation ForPro & Fondation Qualife',
+            url: 'https://rendezvousdesformateurs.ch',
+          },
+          ...(event.ticketing_url ? { url: event.ticketing_url } : {}),
+          eventStatus: 'https://schema.org/EventScheduled',
+          eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+        }))),
+      },
+    ]
+  }),
+})
+
 
 </script>
 
