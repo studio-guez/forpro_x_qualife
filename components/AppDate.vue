@@ -37,7 +37,6 @@
 
 
 <script setup lang="ts">
-import { defineProps } from 'vue'
 import {formaterDate} from "~/shared/date_formatter";
 
 defineProps<{
