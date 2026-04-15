@@ -5,14 +5,14 @@
         <div class="v-index__top-bar__wrap">
           <div class="v-index__top-bar__wrap__text">{{}}</div>
           <img class="v-index__top-bar__wrap__img"
-               src="/images/header.svg" alt="logo">
+               src="/images/header.svg" alt="Edition 2026">
         </div>
       </div>
 
       <div class="v-index__header">
         <div class="v-index__header__padding-top"/>
         <img class="v-index__header__logo-text"
-             src="/images/logo-text.svg" alt="logo">
+             src="/images/logo-text.svg" alt="Les rendez-vous des formateur·ices d'apprenti·es">
       </div>
 
 
@@ -107,7 +107,8 @@
               :location="event.location"
               :subtitle="event.title"
               :link_inscription="event.ticketing_url"
-              :link_resources="event.files"
+              :link_resources="event.resource_type ? (event.resource_type === 'file' ? event.pdf?.url : event.files) : null"
+              :resource_type="event.resource_type"
               :is_complete="event.registration === 'false' && event.ticketing_url.length > 0"
             >
               <div v-html="event.information"/>
@@ -139,7 +140,8 @@
                   :location="event.location"
                   :subtitle="event.title"
                   :link_inscription="event.ticketing_url"
-                  :link_resources="event.files"
+                  :link_resources="event.resource_type ? (event.resource_type === 'file' ? event.pdf?.url : event.files) : null"
+                  :resource_type="event.resource_type"
                   :is_complete="event.registration === 'true'"
                   :is_archives="true"
                 >
@@ -177,14 +179,14 @@
 
       <footer class="v-index__footer">
         <div class="v-index__footer__content">
-          <a target="_blank" href="https://www.for-pro.ch/entreprises">for-pro.ch</a> |
-          <a target="_blank" href="https://www.qualife.ch/actualites/">qualife.ch</a>
+          <a target="_blank" rel="noopener" href="https://www.for-pro.ch/entreprises">for-pro.ch</a> |
+          <a target="_blank" rel="noopener" href="https://www.qualife.ch/actualites/">qualife.ch</a>
 
         </div>
 
         <div class="v-index__footer__content">
-          <img src="/images/logo_forpro.svg" alt="logo forpro">
-          <img src="/images/logo_qualife.svg" alt="logo qualife">
+          <a target="_blank" rel="noopener" href="https://www.for-pro.ch/entreprises"><img src="/images/logo_forpro.svg" alt="Fondation ForPro"></a>
+          <a target="_blank" rel="noopener" href="https://www.qualife.ch/actualites/"><img src="/images/logo_qualife.svg" alt="Fondation Qualife"></a>
         </div>
       </footer>
     </main>
@@ -205,7 +207,9 @@ type fetchedEvent = {
   registration: string,
   information: string,
   ticketing_url: string,
+  resource_type: 'link' | 'file',
   files: string,
+  pdf: { url: string } | null,
 }
 
 type FetchData = CMS_API_Response & {
@@ -233,7 +237,6 @@ type FetchData = CMS_API_Response & {
 
 
 const { data, status } = await useFetch<FetchData>('/api/CMS_KQLRequest', {
-  lazy: true,
   method: 'POST',
   body: {
     query: 'site',
@@ -265,8 +268,15 @@ const { data, status } = await useFetch<FetchData>('/api/CMS_KQLRequest', {
           registration: true,
           information: true,
           ticketing_url: true,
+          resource_type: true,
           files: {
             query: "page.content.files",
+          },
+          pdf: {
+            query: "page.content.pdf.toFiles.first()",
+            select: {
+              url: true,
+            }
           },
         }
       },
@@ -313,6 +323,35 @@ const classedEvent: ComputedRef<{
     events: futureEvent,
     archive: pastEventByYear,
   }
+})
+
+useHead({
+  script: computed(() => {
+    if (!classedEvent.value?.events.length) return []
+    return [
+      {
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify(classedEvent.value.events.map(event => ({
+          '@context': 'https://schema.org',
+          '@type': 'Event',
+          name: event.title,
+          startDate: event.datetime,
+          location: {
+            '@type': 'Place',
+            name: event.location,
+          },
+          organizer: {
+            '@type': 'Organization',
+            name: 'Fondation ForPro & Fondation Qualife',
+            url: 'https://rendezvousdesformateurs.ch',
+          },
+          ...(event.ticketing_url ? { url: event.ticketing_url } : {}),
+          eventStatus: 'https://schema.org/EventScheduled',
+          eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+        }))),
+      },
+    ]
+  }),
 })
 
 

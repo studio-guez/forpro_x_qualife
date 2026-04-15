@@ -27,7 +27,7 @@
 
       <div class="v-app-date__links">
         <a v-if="link_inscription && !is_complete"  target="_blank" class="app-button app-button--blue"   :href="link_inscription" >Inscription</a>
-        <a v-if="link_resources"                    target="_blank" class="app-button app-button--green"  :href="link_resources"   >Ressources</a>
+        <a v-if="link_resources" :target="resource_type === 'file' ? undefined : '_blank'" :download="resource_type === 'file' || undefined" class="app-button app-button--green" :href="link_resources">Ressources</a>
       </div>
     </section>
 </template>
@@ -37,7 +37,6 @@
 
 
 <script setup lang="ts">
-import { defineProps } from 'vue'
 import {formaterDate} from "~/shared/date_formatter";
 
 defineProps<{
@@ -48,6 +47,7 @@ defineProps<{
     subtitle?: string
     link_inscription?: string
     link_resources?: string
+    resource_type?: 'link' | 'file'
     is_complete: boolean
     is_archives?: boolean
 }>()

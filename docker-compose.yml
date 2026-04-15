@@ -1,0 +1,29 @@
+services:
+  dev:
+    image: node:24-alpine
+    working_dir: /app
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+    ports:
+      - "3000:3000"
+    networks:
+      - shared
+    command: sh -c "npm install && npm run dev -- --host 0.0.0.0"
+
+  app:
+    build: .
+    ports:
+      - "3001:3000"
+    networks:
+      - shared
+    profiles:
+      - production
+
+volumes:
+  node_modules:
+
+networks:
+  shared:
+    name: forpro_shared
+    external: true

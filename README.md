@@ -1,75 +1,58 @@
-# Nuxt Minimal Starter
+# Forpro x Qualife - Nuxt 3 Application
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+A modern web application built with Nuxt 3, running on Node.js 20 in a Docker environment.
 
-## Setup
+## Clone & Docker instructions
 
-Make sure to install dependencies:
+1. `git clone https://github.com/studio-guez/forpro_x_qualife.fit`
+1. `cd forpro_x_qualife/`
+1. `cp .env.example .env` _and fill in the credentials_
+1. _Verify config, especially port conflicts in_ `docker-compose.yml`
 
-```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+## Local Development (with Docker)
 
 ```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
+docker-compose up
 ```
 
-## Production
+This will:
+- Mount your local files into the container
+- Install dependencies automatically
+- Start the Nuxt dev server with hot-reload
+- The application will be available at http://localhost:3000
 
-Build the application for production:
+## Production Build (with Docker)
 
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+docker-compose --profile production up app
 ```
 
-Locally preview production build:
+This will build and run the production SSR server at http://localhost:3001
+
+## Running npm commands in Docker
+
+To run any npm command inside the container:
 
 ```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
+docker-compose exec dev npm run <command>
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Or open a shell in the container:
+
+```bash
+docker-compose exec dev sh
+```
+
+## Build for production
+
+1. `npm run build`
+1. `npm run preview` to preview the production build locally
+
+## Generate static site
+
+1. `npm run generate`
+1. Static files will be output to `docs/`
+
+## Default access URLs (with default ports)
+
+- **Application**: http://localhost:3000
