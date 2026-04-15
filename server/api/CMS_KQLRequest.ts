@@ -13,7 +13,6 @@ export default defineEventHandler(async (event) => {
   console.log('config.public.apiUrl:', config.public.apiUrl)
 
   const dataApi = await $fetch(`${config.public.apiUrl}/api/query`, {
-    lazy: true,
     method: 'POST',
     headers: {
       'Authorization': `Basic ${authHeader}`
