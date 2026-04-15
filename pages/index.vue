@@ -183,8 +183,8 @@
         </div>
 
         <div class="v-index__footer__content">
-          <img src="/images/logo_forpro.svg" alt="logo forpro">
-          <img src="/images/logo_qualife.svg" alt="logo qualife">
+          <a target="_blank" href="https://www.for-pro.ch/entreprises"><img src="/images/logo_forpro.svg" alt="logo forpro"></a>
+          <a target="_blank" href="https://www.qualife.ch/actualites/"><img src="/images/logo_qualife.svg" alt="logo qualife"></a>
         </div>
       </footer>
     </main>
