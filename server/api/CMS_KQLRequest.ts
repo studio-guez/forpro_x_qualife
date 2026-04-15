@@ -20,6 +20,14 @@ export default defineEventHandler(async (event) => {
     body,
   })
 
+  // Replace internal Docker hostname with public-facing URL in the response
+  const apiUrl = config.public.apiUrl
+  const apiPublicUrl = config.public.apiPublicUrl
+  if (apiUrl !== apiPublicUrl) {
+    const json = JSON.stringify(dataApi).replaceAll(apiUrl, apiPublicUrl)
+    return JSON.parse(json)
+  }
+
   return dataApi
 })
 

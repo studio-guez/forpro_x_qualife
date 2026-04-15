@@ -14,6 +14,7 @@ export default defineNuxtConfig({
     secret_API_AUTH_PASSWORD: process.env.API_AUTH_PASSWORD,
     public: {
       apiUrl: process.env.NUXT_API_URL,
+      apiPublicUrl: process.env.NUXT_API_PUBLIC_URL || process.env.NUXT_API_URL,
     }
   },
 
