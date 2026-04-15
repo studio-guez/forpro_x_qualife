@@ -6,6 +6,7 @@ A modern web application built with Nuxt 3, running on Node.js 20 in a Docker en
 
 1. `git clone https://github.com/studio-guez/forpro_x_qualife.fit`
 1. `cd forpro_x_qualife/`
+1. `cp .env.example .env` _and fill in the credentials_
 1. _Verify config, especially port conflicts in_ `docker-compose.yml`
 
 ## Local Development (with Docker)
