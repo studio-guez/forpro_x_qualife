@@ -179,14 +179,14 @@
 
       <footer class="v-index__footer">
         <div class="v-index__footer__content">
-          <a target="_blank" rel="noopener" href="https://www.for-pro.ch/entreprises">for-pro.ch</a> |
-          <a target="_blank" rel="noopener" href="https://www.qualife.ch/actualites/">qualife.ch</a>
+          <a target="_blank" rel="noopener" href="https://www.for-pro.ch">for-pro.ch</a> |
+          <a target="_blank" rel="noopener" href="https://www.qualife.ch">qualife.ch</a>
 
         </div>
 
         <div class="v-index__footer__content">
-          <a target="_blank" rel="noopener" href="https://www.for-pro.ch/entreprises"><img :src="imgLogoForpro" alt="Fondation ForPro"></a>
-          <a target="_blank" rel="noopener" href="https://www.qualife.ch/actualites/"><img :src="imgLogoQualife" alt="Fondation Qualife"></a>
+          <a target="_blank" rel="noopener" href="https://www.for-pro.ch"><img :src="imgLogoForpro" alt="Fondation ForPro"></a>
+          <a target="_blank" rel="noopener" href="https://www.qualife.ch"><img :src="imgLogoQualife" alt="Fondation Qualife"></a>
         </div>
       </footer>
     </main>
