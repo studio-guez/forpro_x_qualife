@@ -3,7 +3,6 @@
     >
       <div class="v-index__top-bar">
         <div class="v-index__top-bar__wrap">
-          <div class="v-index__top-bar__wrap__text">{{}}</div>
           <img class="v-index__top-bar__wrap__img"
                :src="imgHeader" alt="Edition 2026">
         </div>
@@ -11,8 +10,10 @@
 
       <div class="v-index__header">
         <div class="v-index__header__padding-top"/>
-        <img class="v-index__header__logo-text"
-             :src="imgLogoText" alt="Les rendez-vous des formateur·ices d'apprenti·es">
+        <h1>
+          <img class="v-index__header__logo-text"
+               :src="imgLogoText" alt="Les rendez-vous des formateur·rices d'apprenti·es">
+        </h1>
       </div>
 
 
@@ -212,6 +213,7 @@ type fetchedEvent = {
   datetime: string,
   time: string,
   registration: string,
+  description: string,
   information: string,
   ticketing_url: string,
   resource_type: 'link' | 'file',
@@ -273,6 +275,7 @@ const { data, status } = await useFetch<FetchData>('/api/CMS_KQLRequest', {
           datetime: true,
           time: true,
           registration: true,
+          description: true,
           information: true,
           ticketing_url: true,
           resource_type: true,
@@ -334,27 +337,51 @@ const classedEvent: ComputedRef<{
 
 useHead({
   script: computed(() => {
-    if (!classedEvent.value?.events.length) return []
+    if (!data.value?.result.events.length) return []
+    const now = new Date()
     return [
       {
         type: 'application/ld+json',
-        innerHTML: JSON.stringify(classedEvent.value.events.map(event => ({
+        innerHTML: JSON.stringify(data.value.result.events.map(event => ({
           '@context': 'https://schema.org',
           '@type': 'Event',
           name: event.title,
           startDate: event.datetime,
+          description: (event.description || event.information).replace(/<[^>]*>/g, '').trim(),
+          inLanguage: 'fr-CH',
           location: {
             '@type': 'Place',
             name: event.location,
+            address: {
+              '@type': 'PostalAddress',
+              streetAddress: event.location,
+              addressLocality: 'Genève',
+              addressCountry: 'CH',
+            },
           },
           organizer: {
             '@type': 'Organization',
+            '@id': 'https://rendezvousdesformateurs.ch/#organization',
             name: 'Fondation ForPro & Fondation Qualife',
             url: 'https://rendezvousdesformateurs.ch',
           },
           ...(event.ticketing_url ? { url: event.ticketing_url } : {}),
-          eventStatus: 'https://schema.org/EventScheduled',
+          eventStatus: new Date(event.datetime) < now
+            ? 'https://schema.org/EventCompleted'
+            : 'https://schema.org/EventScheduled',
           eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+          offers: {
+            '@type': 'Offer',
+            availability: (event.registration === 'false' && event.ticketing_url)
+              ? 'https://schema.org/SoldOut'
+              : 'https://schema.org/InStock',
+            ...(event.ticketing_url ? { url: event.ticketing_url } : {}),
+          },
+          isPartOf: {
+            '@type': 'EventSeries',
+            name: 'Les rendez-vous des formateur·rices d\'apprenti·es',
+            url: 'https://rendezvousdesformateurs.ch',
+          },
         }))),
       },
     ]
@@ -432,9 +459,17 @@ useHead({
 
 .v-index__header__logo-text {
   display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+h1:has(.v-index__header__logo-text) {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  line-height: 0;
   width: calc( 100% / 14 * 12 );
   box-sizing: border-box;
-
   @media (max-width: 650px) {
     width: calc( 100% / 14 * 14 );
   }
