@@ -5,7 +5,6 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "generate": "rm -rf docs && nuxt generate && mv .output/public docs",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },

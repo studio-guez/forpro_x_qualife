@@ -48,11 +48,6 @@ docker-compose exec dev sh
 1. `npm run build`
 1. `npm run preview` to preview the production build locally
 
-## Generate static site
-
-1. `npm run generate`
-1. Static files will be output to `docs/`
-
 ## Default access URLs (with default ports)
 
 - **Application**: http://localhost:3000
