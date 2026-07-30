@@ -40,10 +40,15 @@ export default defineNuxtConfig({
         { property: 'og:image:height', content: '630' },
         { property: 'og:url', content: 'https://rendezvousdesformateurs.ch' },
         { property: 'og:locale', content: 'fr_CH' },
+        { property: 'og:image:alt', content: 'Les rendez-vous des formateur·rices d\'apprenti·es' },
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:title', content: 'Les rendez-vous des formateur·rices' },
         { name: 'twitter:description', content: 'Les rendez-vous des formateur·rices d\'apprenti·es sont des espaces collaboratifs pensés pour créer une communauté active de professionnel·les en charge des apprenti·es.' },
         { name: 'twitter:image', content: 'https://rendezvousdesformateurs.ch/og-image.png' },
+        { name: 'geo.region', content: 'CH-GE' },
+        { name: 'geo.placename', content: 'Genève, Suisse' },
+        { name: 'geo.position', content: '46.2044;6.1432' },
+        { name: 'ICBM', content: '46.2044, 6.1432' },
       ],
       link: [
         { rel: 'canonical', href: 'https://rendezvousdesformateurs.ch' },
@@ -60,8 +65,13 @@ export default defineNuxtConfig({
           innerHTML: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'WebSite',
+            '@id': 'https://rendezvousdesformateurs.ch/#website',
             name: 'Les rendez-vous des formateur·rices',
             url: 'https://rendezvousdesformateurs.ch',
+            inLanguage: 'fr-CH',
+            publisher: {
+              '@id': 'https://rendezvousdesformateurs.ch/#organization',
+            },
           }),
         },
         {
@@ -69,12 +79,58 @@ export default defineNuxtConfig({
           innerHTML: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'Organization',
+            '@id': 'https://rendezvousdesformateurs.ch/#organization',
             name: 'Fondation ForPro & Fondation Qualife',
             url: 'https://rendezvousdesformateurs.ch',
+            logo: {
+              '@type': 'ImageObject',
+              url: 'https://rendezvousdesformateurs.ch/og-image.png',
+              width: 1200,
+              height: 630,
+            },
+            address: {
+              '@type': 'PostalAddress',
+              addressLocality: 'Genève',
+              addressRegion: 'Genève',
+              addressCountry: 'CH',
+            },
+            contactPoint: [
+              {
+                '@type': 'ContactPoint',
+                telephone: '+41-22-700-84-61',
+                contactType: 'customer service',
+                email: 'event@qualife.ch',
+              },
+              {
+                '@type': 'ContactPoint',
+                telephone: '+41-22-552-24-42',
+                contactType: 'customer service',
+                email: 'desk@for-pro.ch',
+              },
+            ],
             sameAs: [
               'https://www.for-pro.ch/entreprises',
               'https://www.qualife.ch/actualites/',
             ],
+          }),
+        },
+        {
+          type: 'application/ld+json',
+          innerHTML: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            '@id': 'https://rendezvousdesformateurs.ch/#webpage',
+            url: 'https://rendezvousdesformateurs.ch',
+            name: 'Les rendez-vous des formateur·rices d\'apprenti·es',
+            description: 'Les rendez-vous des formateur·rices d\'apprenti·es sont des espaces collaboratifs pensés pour créer une communauté active de professionnel·les en charge des apprenti·es.',
+            inLanguage: 'fr-CH',
+            isPartOf: {
+              '@id': 'https://rendezvousdesformateurs.ch/#website',
+            },
+            speakable: {
+              '@type': 'SpeakableSpecification',
+              cssSelector: ['.v-index__intro__content', '.v-index__section__content'],
+            },
           }),
         },
       ]
@@ -82,7 +138,7 @@ export default defineNuxtConfig({
   },
 
   site: {
-    url: 'rendezvousdesformateurs.ch',
+    url: 'https://rendezvousdesformateurs.ch',
   },
 
   modules: ['@nuxtjs/sitemap'],

@@ -43,15 +43,30 @@ Or open a shell in the container:
 docker-compose exec dev sh
 ```
 
+## Updating dependencies
+
+Run npm commands via the Docker container — no local Node.js required:
+
+```bash
+docker-compose exec dev npm update
+```
+
+To check for security advisories without updating:
+
+```bash
+docker-compose exec dev npm audit
+```
+
+If you need to fix vulnerabilities automatically:
+
+```bash
+docker-compose exec dev npm audit fix
+```
+
 ## Build for production
 
 1. `npm run build`
 1. `npm run preview` to preview the production build locally
-
-## Generate static site
-
-1. `npm run generate`
-1. Static files will be output to `docs/`
 
 ## Default access URLs (with default ports)
 
